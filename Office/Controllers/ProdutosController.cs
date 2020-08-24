@@ -1,6 +1,9 @@
-﻿using System.Linq;
+﻿using System;
+using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +15,11 @@ namespace Office.Controllers
     public class ProdutosController : Controller
     {
         private readonly Contexto _context;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
-        public ProdutosController(Contexto context)
+        public ProdutosController(Contexto context, IWebHostEnvironment hostEnvironment)
         {
+            webHostEnvironment = hostEnvironment;
             _context = context;
         }
 
@@ -57,6 +62,20 @@ namespace Office.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (Foto != null)
+                {
+                    string pasta = Path.Combine(webHostEnvironment.WebRootPath, "img\\produtos");
+                    var nomeArquivo = Guid.NewGuid().ToString() + "_" + Foto.FileName;
+                    string caminho = Path.Combine(pasta, nomeArquivo);
+
+                    using (var stream = new FileStream(caminho, FileMode.Create))
+                    {
+                        await Foto.CopyToAsync(stream);
+                    }
+
+                    produto.Foto = "/img/produtos/" + nomeArquivo;
+                }
+
                 _context.Add(produto);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

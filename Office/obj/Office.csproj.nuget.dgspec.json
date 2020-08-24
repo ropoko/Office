@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rodrigo\\Desktop\\Office\\Office\\Office.csproj": {}
+    "C:\\Users\\Rodrigo\\Desktop\\Office\\Office\\Office.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rodrigo\\Desktop\\Office\\Office\\Office.csproj": {
+    "C:\\Users\\Rodrigo\\Desktop\\Office\\Office\\Office.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rodrigo\\Desktop\\Office\\Office\\Office.csproj",
+        "projectUniqueName": "C:\\Users\\Rodrigo\\Desktop\\Office\\Office\\Office.csproj",
         "projectName": "Office",
-        "projectPath": "C:\\Users\\rodrigo\\Desktop\\Office\\Office\\Office.csproj",
-        "packagesPath": "C:\\Users\\rodrigo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rodrigo\\Desktop\\Office\\Office\\obj\\",
+        "projectPath": "C:\\Users\\Rodrigo\\Desktop\\Office\\Office\\Office.csproj",
+        "packagesPath": "C:\\Users\\Rodrigo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Rodrigo\\Desktop\\Office\\Office\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rodrigo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Rodrigo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
