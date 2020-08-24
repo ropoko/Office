@@ -44,6 +44,7 @@ namespace Office.Controllers
                 return NotFound();
             }
 
+            ViewData["CaminhoFoto"] = webHostEnvironment.WebRootPath;
             return View(produto);
         }
 
@@ -80,6 +81,7 @@ namespace Office.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(produto);
         }
 
@@ -104,7 +106,7 @@ namespace Office.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto")] Produto produto)
+        public async Task<IActionResult> Edit(int id, [Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto")] Produto produto, IFormFile NovaFoto)
         {
             if (id != produto.IDProduto)
             {
@@ -115,6 +117,20 @@ namespace Office.Controllers
             {
                 try
                 {
+                    if (NovaFoto != null)
+                    {
+                        string pasta = Path.Combine(webHostEnvironment.WebRootPath, "img\\produtos");
+                        var nomeArquivo = Guid.NewGuid().ToString() + "_" + NovaFoto.FileName;
+                        string caminho = Path.Combine(pasta, nomeArquivo);
+
+                        using (var stream = new FileStream(caminho, FileMode.Create))
+                        {
+                            await NovaFoto.CopyToAsync(stream);
+                        }
+
+                        produto.Foto = "/img/produtos/" + nomeArquivo;
+                    }
+
                     _context.Update(produto);
                     await _context.SaveChangesAsync();
                 }
@@ -131,6 +147,7 @@ namespace Office.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["CaminhoFoto"] = webHostEnvironment.WebRootPath;
             return View(produto);
         }
 

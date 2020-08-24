@@ -38,7 +38,7 @@
             @Html.DisplayNameFor(model => model.Foto)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Foto)
+            <img src="@(System.IO.File.Exists(ViewData["Caminho"] + Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/img/sem_foto.png"))" class="img-fluid" /> 
         </dd>
     </dl>
 </div>

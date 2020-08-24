@@ -10,7 +10,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IDProduto" />
             <div class="form-group">
@@ -35,8 +35,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="Foto" class="control-label"></label>
-                <input asp-for="Foto" class="form-control" />
+                <input type="hidden" asp-for="Foto" />
+                <input type="file" id="NovaFoto" name="NovaFoto" class="form-control-file" accept=".jpg,.jpeg,.png,.pdf,.webm" />
                 <span asp-validation-for="Foto" class="text-danger"></span>
+                <img src="@(System.IO.File.Exists(ViewData["Caminho"] + Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/img/sem_foto.png"))" class="img-fluid" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
