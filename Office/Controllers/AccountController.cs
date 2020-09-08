@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Office.Models;
@@ -13,6 +14,8 @@ namespace Office.Controllers
         private readonly IMapper mapper;
         private readonly UserManager<Usuario> userManager;
         private readonly SignInManager<Usuario> signInManager;
+
+        public static bool Logado;
 
         public AccountController(UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map)
         {
@@ -34,18 +37,43 @@ namespace Office.Controllers
                 return View(user);
 
             var result = await signInManager.PasswordSignInAsync(user.Email, user.Senha, true, lockoutOnFailure: true);
-            //if (result.Succeeded)
-                //return RedirectToAction("Index", "Home");
+            if (result.Succeeded)
+            {
+                Logado = true;
+
+                if (user.Email.Equals("rodrigostramantinoli@gmail.com"))
+                    return RedirectToAction("Index", "Admin");
+                else
+                    return RedirectToAction("Index", "Home");
+            }
 
             if (result.IsLockedOut)
                 ModelState.AddModelError("", "Usuário Bloqueado");
             else
                 ModelState.AddModelError("", "Email e/ou Senha inválidos! :C");
 
-            if (user.Email.Equals("rodrigostramantinoli@gmail.com"))
-                return RedirectToAction("Index", "Admin");
+            return View(user);
+        }
+
+        public IActionResult LoggedIn()
+        {
+            var u = userManager.GetUserAsync(User);
+            if (u != null)
+            {
+                var usu = new Usuario
+                {
+                    Cidade = u.Result.Cidade,
+                    Cpf = u.Result.Cpf,
+                    DataNascimento = u.Result.DataNascimento,
+                    Email = u.Result.Email,
+                    Foto = u.Result.Foto,
+                    Nome = u.Result.Nome,
+                };
+
+                return View(usu);
+            }
             else
-                return RedirectToAction("Index", "Home");
+                return View();
         }
 
         public IActionResult Register()
@@ -59,7 +87,7 @@ namespace Office.Controllers
         {
             if (!ModelState.IsValid)
                 return View();
-            
+
             var usu = mapper.Map<Usuario>(userModel);
 
             var result = await userManager.CreateAsync(usu, userModel.Password);
@@ -84,12 +112,18 @@ namespace Office.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
+            Logado = false;
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 
-    public class MappingProfile : Profile 
+    public class MappingProfile : Profile
     {
         public MappingProfile()
         {

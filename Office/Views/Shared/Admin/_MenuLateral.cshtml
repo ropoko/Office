@@ -14,7 +14,7 @@
             <a class="nav-link active">E-mail</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active">Inbox</a>
+            @Html.ActionLink("Produtos", "Index", "Produtos", null, null, null, null, new { @class = "nav-link active" })
         </li>
         <li class="nav-item">
             @Html.ActionLink("Cadastro de Usuários", "Register", "Admin", null, null, null, null, new { @class = "nav-link active" })

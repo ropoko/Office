@@ -46,15 +46,15 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c0fff748-9978-486d-b02a-3e344e23b491",
-                            ConcurrencyStamp = "1c88ac72-3381-4c82-9c0f-f57187255843",
+                            Id = "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9",
+                            ConcurrencyStamp = "a18f68f2-1591-4533-9124-300f11f75946",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "6c6723af-8cf4-4e59-a56c-cf9bfcfc38ff",
-                            ConcurrencyStamp = "087f7a35-3082-49f4-9019-b812652cccca",
+                            Id = "82c6888e-4a09-4e22-bdfc-3b4884cd0546",
+                            ConcurrencyStamp = "0f14d030-d080-4cf2-9df3-5b8bdddc13ba",
                             Name = "VISITANTE",
                             NormalizedName = "VISITANTE"
                         });
@@ -154,8 +154,8 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "c0fff748-9978-486d-b02a-3e344e23b491",
-                            RoleId = "c0fff748-9978-486d-b02a-3e344e23b491"
+                            UserId = "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9",
+                            RoleId = "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9"
                         });
                 });
 
@@ -377,10 +377,10 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "c0fff748-9978-486d-b02a-3e344e23b491",
+                            Id = "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9",
                             AccessFailedCount = 0,
                             Cidade = "Barra Bonita",
-                            ConcurrencyStamp = "8aafb0db-2654-4348-9439-9eef403a5bc5",
+                            ConcurrencyStamp = "0090bb80-7e4b-46b8-980f-45180d033a7e",
                             Cpf = "39493629830",
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "rodrigostramantinoli@gmail.com",
@@ -389,7 +389,7 @@ namespace Office.Migrations
                             Nome = "ADMIN",
                             NormalizedEmail = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
                             NormalizedUserName = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEM2jalRSmBEIIg0/obiXtk2P12ZJVu/fMm1+AKtwgfC5QW+pdCXnFcoTYQaUwXjhlg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAYbEqkij8+b8J00/nKfwAMxIjuUSL1dYjSmNe6SXnkJKjW8Gxam4j/59aySlOEXIQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "45420240",
                             TwoFactorEnabled = false,

@@ -249,22 +249,22 @@ namespace Office.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "c0fff748-9978-486d-b02a-3e344e23b491", "1c88ac72-3381-4c82-9c0f-f57187255843", "ADMIN", "ADMIN" });
+                values: new object[] { "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9", "a18f68f2-1591-4533-9124-300f11f75946", "ADMIN", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "6c6723af-8cf4-4e59-a56c-cf9bfcfc38ff", "087f7a35-3082-49f4-9019-b812652cccca", "VISITANTE", "VISITANTE" });
+                values: new object[] { "82c6888e-4a09-4e22-bdfc-3b4884cd0546", "0f14d030-d080-4cf2-9df3-5b8bdddc13ba", "VISITANTE", "VISITANTE" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Cidade", "ConcurrencyStamp", "Cpf", "DataNascimento", "Email", "EmailConfirmed", "Foto", "LockoutEnabled", "LockoutEnd", "Nome", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c0fff748-9978-486d-b02a-3e344e23b491", 0, "Barra Bonita", "8aafb0db-2654-4348-9439-9eef403a5bc5", "39493629830", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "rodrigostramantinoli@gmail.com", true, null, false, null, "ADMIN", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "AQAAAAEAACcQAAAAEM2jalRSmBEIIg0/obiXtk2P12ZJVu/fMm1+AKtwgfC5QW+pdCXnFcoTYQaUwXjhlg==", null, false, "45420240", false, "rodrigostramantinoli@gmail.com" });
+                values: new object[] { "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9", 0, "Barra Bonita", "0090bb80-7e4b-46b8-980f-45180d033a7e", "39493629830", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "rodrigostramantinoli@gmail.com", true, null, false, null, "ADMIN", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "AQAAAAEAACcQAAAAEAYbEqkij8+b8J00/nKfwAMxIjuUSL1dYjSmNe6SXnkJKjW8Gxam4j/59aySlOEXIQ==", null, false, "45420240", false, "rodrigostramantinoli@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "UserId", "RoleId" },
-                values: new object[] { "c0fff748-9978-486d-b02a-3e344e23b491", "c0fff748-9978-486d-b02a-3e344e23b491" });
+                values: new object[] { "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9", "c2d8fbea-bb60-4824-9ee7-94fcaa07eef9" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

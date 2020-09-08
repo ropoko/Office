@@ -1,11 +1,13 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Office.Models;
 
 namespace Office.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class CategoriasController : Controller
     {
         private readonly Contexto _context;

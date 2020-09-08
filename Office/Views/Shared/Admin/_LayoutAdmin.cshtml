@@ -98,20 +98,7 @@
     <script src="~/Admin/plugins/bootstrap/js/bootstrap.min.js"></script>
     <!-- AdminLTE App -->
     <script src="~/Admin/dist/js/adminlte.min.js"></script>
-    @section Scripts {
-    @{ await Html.RenderPartialAsync("_ValidationScriptsPartital"); }
-            
-    <script type="text/javascript">
-        window.addEventListener('load', function () {
-            document.querySelector('input[type="file"]').addEventListener('change', function () {
-                if (this.files && this.files[0]) {
-                    var img = document.querySelector('img');
-                    img.src = URL.createObjectURL(this.files[0]);
-                }
-            });
-        });
-    </script>
-    }
+    @RenderSection("scripts", required: false) 
 </body>
 </html>
 

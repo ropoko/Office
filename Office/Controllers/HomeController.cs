@@ -16,6 +16,9 @@ namespace Office.Controllers
 
         public IActionResult Index()
         {
+            if (AccountController.Logado)
+                ViewBag.Logado = true;
+
             return View();
         }
     }

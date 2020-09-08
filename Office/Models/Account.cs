@@ -11,8 +11,9 @@ namespace Office.Models
         [Display(Name = "E-mail")]
         public string Email { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Senha Incorreta!")]
         [DataType(DataType.Password)]
+        [Display(Name = "Senha")]
         public string Senha { get; set; }
     }
 

@@ -754,6 +754,13 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Extensi
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -765,6 +772,8 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualS
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Owin.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Owin.Security.Providers.Instagram.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
@@ -779,6 +788,7 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.Compositio
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\System.Text.Json.dll
@@ -854,7 +864,6 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win-x86\
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfoInputs.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfo.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csproj.CoreCompileInputs.cache
@@ -865,14 +874,21 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssem
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.input.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.output.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorCoreGenerate.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccessDenied.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\LoggedIn.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Produtos.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Register.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Create.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Delete.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Details.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Edit.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Index.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Galeria\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Pedidos\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Create.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Delete.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Details.cshtml.g.cs
@@ -880,6 +896,7 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produ
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Admin\_LayoutAdmin.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Admin\_MenuLateral.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Pedidos\_LayoutPedidos.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HeaderFooter.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
@@ -893,5 +910,3 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\staticwebassets\O
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.dll
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Register.cshtml.g.cs
