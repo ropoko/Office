@@ -34,8 +34,8 @@ namespace Office.Controllers
                 return View(user);
 
             var result = await signInManager.PasswordSignInAsync(user.Email, user.Senha, true, lockoutOnFailure: true);
-            if (result.Succeeded)
-                return RedirectToAction("Index", "Admin");
+            //if (result.Succeeded)
+                //return RedirectToAction("Index", "Home");
 
             if (result.IsLockedOut)
                 ModelState.AddModelError("", "Usuário Bloqueado");
@@ -45,17 +45,17 @@ namespace Office.Controllers
             if (user.Email.Equals("rodrigostramantinoli@gmail.com"))
                 return RedirectToAction("Index", "Admin");
             else
-                return View();
+                return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult Cadastro()
+        public IActionResult Register()
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Cadastro(UserRegistrationModel userModel)
+        public async Task<IActionResult> Register(UserRegistrationModel userModel)
         {
             if (!ModelState.IsValid)
                 return View();
@@ -74,9 +74,10 @@ namespace Office.Controllers
                 return View(userModel);
             }
 
+            ViewBag.Cadastrado = true;
             await userManager.AddToRoleAsync(usu, "VISITANTE");
 
-            return View(usu);
+            return RedirectToAction("Login", "Account");
         }
 
         [HttpPost]

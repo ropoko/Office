@@ -21,6 +21,7 @@ namespace Office.Models
         [Display(Name = "Data de Nascimento")]
         [Required]
         [Column("DataNascimento")]
+        [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
 
         [Display(Name = "CPF")]
@@ -30,5 +31,9 @@ namespace Office.Models
 
         [StringLength(300)]
         public string Foto { get; set; }
+
+        [NotMapped]
+        [Display(Name = "Perfil")]
+        public string Perfis { get; set; }
     }
 }

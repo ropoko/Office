@@ -9,8 +9,8 @@ using Office;
 namespace Office.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200811133330_usuFoto_prodFoto")]
-    partial class usuFoto_prodFoto
+    [Migration("20200908011310_Inicial")]
+    partial class Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,15 +48,15 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9500fd86-a1a3-42d4-9a01-c1bf4a13b550",
-                            ConcurrencyStamp = "7b267143-d6e1-44c3-8e7e-623b90895df4",
+                            Id = "c0fff748-9978-486d-b02a-3e344e23b491",
+                            ConcurrencyStamp = "1c88ac72-3381-4c82-9c0f-f57187255843",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "7a4aefe3-fdcd-4ff8-8952-ccda83cf8d4a",
-                            ConcurrencyStamp = "5837536a-f570-47d0-ba48-c43f40cd3cd1",
+                            Id = "6c6723af-8cf4-4e59-a56c-cf9bfcfc38ff",
+                            ConcurrencyStamp = "087f7a35-3082-49f4-9019-b812652cccca",
                             Name = "VISITANTE",
                             NormalizedName = "VISITANTE"
                         });
@@ -156,8 +156,8 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "9500fd86-a1a3-42d4-9a01-c1bf4a13b550",
-                            RoleId = "9500fd86-a1a3-42d4-9a01-c1bf4a13b550"
+                            UserId = "c0fff748-9978-486d-b02a-3e344e23b491",
+                            RoleId = "c0fff748-9978-486d-b02a-3e344e23b491"
                         });
                 });
 
@@ -379,10 +379,10 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9500fd86-a1a3-42d4-9a01-c1bf4a13b550",
+                            Id = "c0fff748-9978-486d-b02a-3e344e23b491",
                             AccessFailedCount = 0,
                             Cidade = "Barra Bonita",
-                            ConcurrencyStamp = "35c0ea09-c8f2-4121-aafc-2ef8a4281dc3",
+                            ConcurrencyStamp = "8aafb0db-2654-4348-9439-9eef403a5bc5",
                             Cpf = "39493629830",
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "rodrigostramantinoli@gmail.com",
@@ -391,9 +391,9 @@ namespace Office.Migrations
                             Nome = "ADMIN",
                             NormalizedEmail = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
                             NormalizedUserName = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEF0zqeAUDmVNjL2uIZY1LQqCYJcTNQHvVO8LyLvqLyAXYnqvCNmm+t+ruO6NlH/WA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEM2jalRSmBEIIg0/obiXtk2P12ZJVu/fMm1+AKtwgfC5QW+pdCXnFcoTYQaUwXjhlg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6128980",
+                            SecurityStamp = "45420240",
                             TwoFactorEnabled = false,
                             UserName = "rodrigostramantinoli@gmail.com"
                         });

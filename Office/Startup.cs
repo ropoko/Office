@@ -30,6 +30,7 @@ namespace Office
 
             services.AddIdentity<Usuario, IdentityRole>(options => {
                 options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireDigit = false;
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredUniqueChars = 0;

@@ -865,7 +865,6 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssem
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.input.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.output.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorCoreGenerate.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Cadastro.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Create.cshtml.g.cs
@@ -894,3 +893,5 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\staticwebassets\O
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.dll
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Register.cshtml.g.cs
