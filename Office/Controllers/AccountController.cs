@@ -55,6 +55,7 @@ namespace Office.Controllers
             return View(user);
         }
 
+        [Authorize]
         public IActionResult LoggedIn()
         {
             var u = userManager.GetUserAsync(User);

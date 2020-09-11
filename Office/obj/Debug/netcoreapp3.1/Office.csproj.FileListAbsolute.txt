@@ -910,3 +910,4 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\staticwebassets\O
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.dll
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csprojAssemblyReference.cache

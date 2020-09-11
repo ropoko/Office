@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Office.Controllers
 {
-    [Authorize(Roles = "ADMIN, VISITANTE")]
+    [Authorize(Roles = "VISITANTE")]
     public class PedidosController : Controller
     {
         public IActionResult Index()
