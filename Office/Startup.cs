@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Office.Models;
 using System;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Office
 {
@@ -23,6 +24,15 @@ namespace Office
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc(op =>
+            {
+                op.CacheProfiles.Add("Default30",
+                    new CacheProfile()
+                    {
+                        Duration = 30,
+                        NoStore = true
+                    });
+            });
             services.AddControllersWithViews();
             services.AddDbContext<Contexto>(options => options.UseMySql(Configuration.GetConnectionString("Conexao")));
 

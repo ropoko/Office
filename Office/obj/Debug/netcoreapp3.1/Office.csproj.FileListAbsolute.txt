@@ -440,6 +440,14 @@ C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.dll
 C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Cadastro.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -759,8 +767,6 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Identit
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
-C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Owin.dll
-C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.Owin.Security.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
@@ -772,8 +778,6 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Microsoft.VisualS
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
-C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Owin.dll
-C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Owin.Security.Providers.Instagram.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
@@ -864,13 +868,6 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win-x86\
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfoInputs.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csproj.CoreCompileInputs.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.input.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.output.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorCoreGenerate.cache
@@ -910,4 +907,3 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\staticwebassets\O
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.dll
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csprojAssemblyReference.cache

@@ -4,21 +4,25 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Razor.TagHelpers;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.VisualBasic;
 using Office.Models;
 
 namespace Office.Controllers
 {
     [AllowAnonymous]
+    [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true, Duration = 1801)]
     public class AccountController : Controller
     {
         private readonly IMapper mapper;
+        private readonly IMemoryCache _cache;
         private readonly UserManager<Usuario> userManager;
         private readonly SignInManager<Usuario> signInManager;
 
-        public static bool Logado;
-
-        public AccountController(UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map)
+        public AccountController(UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map, IMemoryCache cache)
         {
+            _cache = cache;
             mapper = map;
             userManager = user;
             signInManager = signIn;
@@ -26,7 +30,10 @@ namespace Office.Controllers
 
         public IActionResult Login()
         {
-            return View();
+            if (User.Identity.IsAuthenticated)
+                return RedirectToAction("LoggedIn");
+            else
+                return View();
         }
 
         [HttpPost]
@@ -39,8 +46,6 @@ namespace Office.Controllers
             var result = await signInManager.PasswordSignInAsync(user.Email, user.Senha, true, lockoutOnFailure: true);
             if (result.Succeeded)
             {
-                Logado = true;
-
                 if (user.Email.Equals("rodrigostramantinoli@gmail.com"))
                     return RedirectToAction("Index", "Admin");
                 else
@@ -59,22 +64,18 @@ namespace Office.Controllers
         public IActionResult LoggedIn()
         {
             var u = userManager.GetUserAsync(User);
-            if (u != null)
-            {
-                var usu = new Usuario
-                {
-                    Cidade = u.Result.Cidade,
-                    Cpf = u.Result.Cpf,
-                    DataNascimento = u.Result.DataNascimento,
-                    Email = u.Result.Email,
-                    Foto = u.Result.Foto,
-                    Nome = u.Result.Nome,
-                };
 
-                return View(usu);
-            }
-            else
-                return View();
+            var usu = new Usuario
+            {
+                Cidade = u.Result.Cidade,
+                Cpf = u.Result.Cpf,
+                DataNascimento = u.Result.DataNascimento,
+                Email = u.Result.Email,
+                Foto = u.Result.Foto,
+                Nome = u.Result.Nome,
+            };
+
+            return View(usu);
         }
 
         public IActionResult Register()
@@ -113,8 +114,8 @@ namespace Office.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
-            Logado = false;
             await signInManager.SignOutAsync();
+            var a = signInManager.GetExternalLoginInfoAsync().Result;
             return RedirectToAction("Index", "Home");
         }
 

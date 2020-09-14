@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Office.Models;
-using Owin.Security.Providers.Instagram;
+
 
 namespace Office.Controllers
 {
