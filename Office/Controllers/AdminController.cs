@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Office.Models;
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Office.Controllers
@@ -14,9 +18,11 @@ namespace Office.Controllers
         private readonly IMapper mapper;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<Usuario> userManager;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
-        public AdminController(RoleManager<IdentityRole> role, UserManager<Usuario> user, IMapper map)
+        public AdminController(RoleManager<IdentityRole> role, UserManager<Usuario> user, IMapper map, IWebHostEnvironment hostEnvironment)
         {
+            webHostEnvironment = hostEnvironment;
             roleManager = role;
             mapper = map;
             userManager = user;
@@ -37,16 +43,31 @@ namespace Office.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(UserRegistrationModel userModel)
+        public async Task<IActionResult> Register(UserRegistrationModel userModel, IFormFile Foto)
         {
-            var perfis = roleManager.Roles;
-            ViewData["Perfis"] = new SelectList(perfis, "NormalizedName", "Name");
-
             if (!ModelState.IsValid)
                 return View();
 
+            var perfis = roleManager.Roles;
+            ViewData["Perfis"] = new SelectList(perfis, "NormalizedName", "Name");
+
+            if (Foto != null)
+            {
+                string pasta = Path.Combine(webHostEnvironment.WebRootPath, "img\\usuarios");
+                var nomeArquivo = Guid.NewGuid().ToString() + "_" + Foto.FileName;
+                string caminho = Path.Combine(pasta, nomeArquivo);
+
+                using (var stream = new FileStream(caminho, FileMode.Create))
+                {
+                    await Foto.CopyToAsync(stream);
+                }
+
+                userModel.Foto = "/img/usuarios/" + nomeArquivo;
+            }
+
             var usu = mapper.Map<Usuario>(userModel);
 
+            usu.DataCadastro = DateTime.Now;
             var result = await userManager.CreateAsync(usu, userModel.Password);
 
             if (!result.Succeeded)

@@ -54,10 +54,12 @@
                 <input asp-for="ConfirmPassword" class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-            @{ Model.DataCadastro = System.DateTime.Now; }
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+    </div>
+    <div>
+        <a asp-controller="Usuarios" asp-action="Index">Back to List</a>
     </div>
 </div>
