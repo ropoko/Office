@@ -175,8 +175,14 @@ namespace Office.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var produto = await _context.Produtos.FindAsync(id);
+
+            // Delete img from wwwroot
+            string imgProd = Environment.CurrentDirectory + "\\wwwroot\\" + produto.Foto;
+            System.IO.File.Delete(imgProd);
+
             _context.Produtos.Remove(produto);
             await _context.SaveChangesAsync();
+
             return RedirectToAction(nameof(Index));
         }
 

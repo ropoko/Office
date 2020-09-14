@@ -14,14 +14,12 @@ namespace Office.Controllers
         private readonly IMapper mapper;
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<Usuario> userManager;
-        private readonly SignInManager<Usuario> signInManager;
 
-        public AdminController(RoleManager<IdentityRole> role, UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map)
+        public AdminController(RoleManager<IdentityRole> role, UserManager<Usuario> user, IMapper map)
         {
             roleManager = role;
             mapper = map;
             userManager = user;
-            signInManager = signIn;
         }
 
 

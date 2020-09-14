@@ -39,7 +39,7 @@
                 <input type="hidden" asp-for="Foto" />
                 <input type="file" id="NovaFoto" name="NovaFoto" class="form-control-file" accept=".jpg,.jpeg,.png,.pdf,.webm" />
                 <span asp-validation-for="Foto" class="text-danger"></span>
-                <img src="@(System.IO.File.Exists(ViewData["Caminho"] + Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/img/sem_foto.png"))" class="img-fluid" />
+                <img src="@Url.Content(Model.Foto)" class="img-fluid" width="500" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
