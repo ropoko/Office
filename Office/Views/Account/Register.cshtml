@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Register" id="registerUser" enctype="multipart/form-data">
+        <form asp-action="Register" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
@@ -58,62 +58,13 @@
                 <img src="" class="img-fluid" id="PreviewFoto" width="500" />
             </div>
             <div class="form-group">
-                <input value="Cadastrar" class="btn btn-primary" data-toggle="modal" data-target="#modalWelcomeMessage" />
+                <input value="Cadastrar" type="submit" class="btn btn-primary" />
             </div>
-            @* Modal mensagem bem-vindo *@
-            <div class="modal fade" id="modalWelcomeMessage" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Parabéns!!</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Você acaba de criar sua conta, sinta-se à vontade para <a data-toggle="modal" data-target="#modalExplication"><strong>reservar</strong></a> seus produtos</p>
-                        </div>
-                        <div class="modal-footer">
-                            <small>clique em "reservar" para saber como funciona!</small>
-                            <button type="submit" onclick="submitForm()" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @* ---------=----------- *@
-            @* Modal explicação *@
-            <div class="modal fade" id="modalExplication" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Reservas!</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>texto</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @* ---------=----------- *@
         </form>
     </div>
 </div>
 
-<script id="submitForm">
-    function submitForm() {
-        document.getElementById("registerUser").submit();
-    }
-</script>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script type="text/javascript">
         window.addEventListener('load', function () {
@@ -126,4 +77,4 @@
         });
     </script>
 }
-}
+

@@ -115,6 +115,7 @@ namespace Office.Controllers
 
             var usu = mapper.Map<Usuario>(userModel);
 
+            usu.DataCadastro = DateTime.Now;
             var result = await userManager.CreateAsync(usu, userModel.Password);
 
             if (!result.Succeeded)
@@ -126,12 +127,13 @@ namespace Office.Controllers
 
                 return View(userModel);
             }
-
-            var u = await userManager.FindByEmailAsync(usu.Email);
-            u.DataCadastro = DateTime.Now;
+            
             await userManager.AddToRoleAsync(usu, "VISITANTE");
+            await signInManager.SignInAsync(usu, true);
 
-            return RedirectToAction("Login", "Account");
+            TempData["PrimeiroAcesso"] = "OK"; 
+
+            return RedirectToAction("LoggedIn");
         }
 
         [HttpPost]

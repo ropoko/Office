@@ -12,7 +12,12 @@
             @Html.DisplayNameFor(model => model.Foto)
         </dt>
         <dd class="col-sm-10">
-            <img src="@Url.Content(Model.Foto)" class="img-fluid" width="150" />
+            <img src="@Url.Content(Model.Foto)" class="img-fluid fotoUser" width="150" />
+        </dd>
+        <dd class="edit">
+            <a href="#">
+                <i class="far fa-edit fa-lg"></i>
+            </a>
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
@@ -51,7 +56,48 @@
             @Html.DisplayFor(model => model.DataCadastro)
         </dd>
     </dl>
+    @* Modal mensagem bem-vindo e explicação reservas *@
+    <div class="modal fade" id="modalWelcomeMessage" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Parabéns!!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Você acaba de criar sua conta, sinta-se à vontade para <a data-toggle="modal" data-target="#modalExplication"><strong>reservar</strong></a> seus produtos</p>
+                </div>
+                <div class="modal-body">
+                    <h5 class="modal-title">Entenda as reservas!</h5>
+                    <p>
+                        O sistema de reserva é um meio que possibilita à você, cliente, a opção de verificar a disponibilidade do produto e
+                        guarda-lo para poder busca-lo quando possível, porém dentro do prazo estipulado pela nossa loja - 48 horas. Com esse sistema
+                        você agiliza o processo de compra, evita de ir até a loja e correr o risco de ficar sem seu produto desejado, se encarregando apenas de
+                        buscar e pagar pelo produto na loja.
+                    </p>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @* ---------=----------- *@
 </div>
 <form asp-controller="Account" asp-action="Logout">
     <button type="submit" class="btn btn-outline-dark">Sair</button>
 </form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        var primeiroAcesso = '@TempData["PrimeiroAcesso"]';
+
+    if (primeiroAcesso == "OK") {
+        $('#modalWelcomeMessage').modal("show");
+    }
+    </script>
+}
