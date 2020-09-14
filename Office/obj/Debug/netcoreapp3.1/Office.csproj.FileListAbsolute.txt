@@ -440,14 +440,6 @@ C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.dll
 C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
 C:\Users\rodri\OneDrive\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Account\Cadastro.cshtml.g.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfoInputs.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csproj.CoreCompileInputs.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -868,6 +860,13 @@ C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win-x86\
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Rodrigo\Desktop\Office\Office\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.AssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cache
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorAssemblyInfo.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.input.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.TagHelpers.output.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.RazorCoreGenerate.cache
@@ -885,7 +884,6 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categ
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Galeria\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Pedidos\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Create.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Delete.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Details.cshtml.g.cs
@@ -893,7 +891,6 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produ
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Admin\_LayoutAdmin.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Admin\_MenuLateral.cshtml.g.cs
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Pedidos\_LayoutPedidos.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_HeaderFooter.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs

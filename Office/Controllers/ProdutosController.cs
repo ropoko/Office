@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Office.Models;
 
@@ -51,12 +53,18 @@ namespace Office.Controllers
         // GET: Produtos/Create
         public IActionResult Create()
         {
+            var lista = new List<string>();
+
+            var categoria = _context.Categorias.ForEachAsync((a) => {
+                lista.Add(a.Nome);
+            });
+
+            ViewData["Categorias"] = new SelectList(lista);
+
             return View();
         }
 
         // POST: Produtos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto")] Produto produto, IFormFile Foto)
@@ -102,8 +110,6 @@ namespace Office.Controllers
         }
 
         // POST: Produtos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto")] Produto produto, IFormFile NovaFoto)

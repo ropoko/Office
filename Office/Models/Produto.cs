@@ -23,7 +23,7 @@ namespace Office.Models
 
         [Display(Name = "Categoria")]
         [Required]
-        public int Categoria { get; set; }
+        public string Categoria { get; set; }
         public Categoria Categorias { get; set; }
 
         [StringLength(300)]
