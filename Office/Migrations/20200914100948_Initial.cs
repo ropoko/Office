@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Office.Migrations
 {
-    public partial class Inicial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,7 +45,8 @@ namespace Office.Migrations
                     Cidade = table.Column<string>(nullable: false),
                     DataNascimento = table.Column<DateTime>(nullable: false),
                     Cpf = table.Column<string>(nullable: false),
-                    Foto = table.Column<string>(maxLength: 300, nullable: true)
+                    Foto = table.Column<string>(maxLength: 300, nullable: true),
+                    DataCadastro = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -249,22 +250,22 @@ namespace Office.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "9f545566-8088-4620-8084-9bd45bb09afe", "58725627-59d3-4a5a-8fbe-03d81805ffec", "ADMIN", "ADMIN" });
+                values: new object[] { "d4aae1a5-d6e8-4261-9243-b96bc2726ab1", "47bf6784-636d-454f-bf6f-6e2491769826", "ADMIN", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "61880b5c-3f08-499c-a0e3-ab8282763b2e", "08569b95-5ee2-480e-9d92-26c7201e9963", "VISITANTE", "VISITANTE" });
+                values: new object[] { "47697c2d-6bb4-404c-9868-f8385ce16ab3", "7c596db7-596e-44bf-9985-296364718ed6", "VISITANTE", "VISITANTE" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Cidade", "ConcurrencyStamp", "Cpf", "DataNascimento", "Email", "EmailConfirmed", "Foto", "LockoutEnabled", "LockoutEnd", "Nome", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9f545566-8088-4620-8084-9bd45bb09afe", 0, "Barra Bonita", "0277410d-4830-4b70-9ce3-a317a8b73110", "39493629830", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "rodrigostramantinoli@gmail.com", true, null, false, null, "ADMIN", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "AQAAAAEAACcQAAAAEPHx6YCIrsgOYIDRMK6qCCbn9cDPr4h82RrwGA8owtsgb5ZIpqA4YqX6ewQBIAr1UQ==", null, false, "45420240", false, "rodrigostramantinoli@gmail.com" });
+                columns: new[] { "Id", "AccessFailedCount", "Cidade", "ConcurrencyStamp", "Cpf", "DataCadastro", "DataNascimento", "Email", "EmailConfirmed", "Foto", "LockoutEnabled", "LockoutEnd", "Nome", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "d4aae1a5-d6e8-4261-9243-b96bc2726ab1", 0, "Barra Bonita", "74a76e9b-ecd3-4af3-82ad-0f283087e525", "39493629830", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "rodrigostramantinoli@gmail.com", true, null, false, null, "ADMIN", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "AQAAAAEAACcQAAAAEKP0cp//+XMmvylpW9uQO2GcfaCO+cQIOmFK9SmdSgdlE7gkSS9rPkrVNMw0EYlyEQ==", null, false, "45420240", false, "rodrigostramantinoli@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "UserId", "RoleId" },
-                values: new object[] { "9f545566-8088-4620-8084-9bd45bb09afe", "9f545566-8088-4620-8084-9bd45bb09afe" });
+                values: new object[] { "d4aae1a5-d6e8-4261-9243-b96bc2726ab1", "d4aae1a5-d6e8-4261-9243-b96bc2726ab1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

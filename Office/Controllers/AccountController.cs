@@ -1,12 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.IO;
+using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Razor.TagHelpers;
-using Microsoft.Extensions.Caching.Memory;
-using Microsoft.VisualBasic;
 using Office.Models;
 
 namespace Office.Controllers
@@ -16,13 +16,13 @@ namespace Office.Controllers
     public class AccountController : Controller
     {
         private readonly IMapper mapper;
-        private readonly IMemoryCache _cache;
         private readonly UserManager<Usuario> userManager;
         private readonly SignInManager<Usuario> signInManager;
+        private readonly IWebHostEnvironment webHostEnvironment;
 
-        public AccountController(UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map, IMemoryCache cache)
+        public AccountController(UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map, IWebHostEnvironment hostEnvironment)
         {
-            _cache = cache;
+            webHostEnvironment = hostEnvironment;
             mapper = map;
             userManager = user;
             signInManager = signIn;
@@ -63,19 +63,28 @@ namespace Office.Controllers
         [Authorize]
         public IActionResult LoggedIn()
         {
-            var u = userManager.GetUserAsync(User);
-
-            var usu = new Usuario
+            try
             {
-                Cidade = u.Result.Cidade,
-                Cpf = u.Result.Cpf,
-                DataNascimento = u.Result.DataNascimento,
-                Email = u.Result.Email,
-                Foto = u.Result.Foto,
-                Nome = u.Result.Nome,
-            };
+                var u = userManager.GetUserAsync(User);
 
-            return View(usu);
+                var usu = new Usuario
+                {
+                    Cidade = u.Result.Cidade,
+                    Cpf = u.Result.Cpf,
+                    DataNascimento = u.Result.DataNascimento,
+                    Email = u.Result.Email,
+                    Foto = u.Result.Foto,
+                    Nome = u.Result.Nome,
+                    DataCadastro = u.Result.DataCadastro
+                };
+
+                return View(usu);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return View();
+            }
         }
 
         public IActionResult Register()
@@ -85,10 +94,24 @@ namespace Office.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(UserRegistrationModel userModel)
+        public async Task<IActionResult> Register(UserRegistrationModel userModel, IFormFile Foto)
         {
             if (!ModelState.IsValid)
                 return View();
+
+            if (Foto != null)
+            {
+                string pasta = Path.Combine(webHostEnvironment.WebRootPath, "img\\usuarios");
+                var nomeArquivo = Guid.NewGuid().ToString() + "_" + Foto.FileName;
+                string caminho = Path.Combine(pasta, nomeArquivo);
+
+                using (var stream = new FileStream(caminho, FileMode.Create))
+                {
+                    await Foto.CopyToAsync(stream);
+                }
+
+                userModel.Foto = "/img/usuarios/" + nomeArquivo;
+            }
 
             var usu = mapper.Map<Usuario>(userModel);
 
@@ -104,7 +127,8 @@ namespace Office.Controllers
                 return View(userModel);
             }
 
-            ViewBag.Cadastrado = true;
+            var u = await userManager.FindByEmailAsync(usu.Email);
+            u.DataCadastro = DateTime.Now;
             await userManager.AddToRoleAsync(usu, "VISITANTE");
 
             return RedirectToAction("Login", "Account");

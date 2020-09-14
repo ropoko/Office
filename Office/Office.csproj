@@ -21,7 +21,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Usuarios\" />
     <Folder Include="Views\Pedidos\" />
+    <Folder Include="wwwroot\img\usuarios\" />
     <Folder Include="wwwroot\img\produtos\" />
     <Folder Include="wwwroot\img\produtos\" />
     <Folder Include="wwwroot\img\produtos\" />

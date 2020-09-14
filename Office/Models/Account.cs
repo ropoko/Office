@@ -57,5 +57,9 @@ namespace Office.Models
 
         [StringLength(300)]
         public string Foto { get; set; }
+
+        [Required]
+        [Column("DataCadastro")]
+        public DateTime DataCadastro { get; set; }
     }
 }

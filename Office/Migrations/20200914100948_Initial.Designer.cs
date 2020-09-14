@@ -9,8 +9,8 @@ using Office;
 namespace Office.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200914040409_Inicial")]
-    partial class Inicial
+    [Migration("20200914100948_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,15 +48,15 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9f545566-8088-4620-8084-9bd45bb09afe",
-                            ConcurrencyStamp = "58725627-59d3-4a5a-8fbe-03d81805ffec",
+                            Id = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1",
+                            ConcurrencyStamp = "47bf6784-636d-454f-bf6f-6e2491769826",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "61880b5c-3f08-499c-a0e3-ab8282763b2e",
-                            ConcurrencyStamp = "08569b95-5ee2-480e-9d92-26c7201e9963",
+                            Id = "47697c2d-6bb4-404c-9868-f8385ce16ab3",
+                            ConcurrencyStamp = "7c596db7-596e-44bf-9985-296364718ed6",
                             Name = "VISITANTE",
                             NormalizedName = "VISITANTE"
                         });
@@ -156,8 +156,8 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "9f545566-8088-4620-8084-9bd45bb09afe",
-                            RoleId = "9f545566-8088-4620-8084-9bd45bb09afe"
+                            UserId = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1",
+                            RoleId = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1"
                         });
                 });
 
@@ -313,6 +313,10 @@ namespace Office.Migrations
                         .HasColumnName("Cpf")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
+                    b.Property<DateTime>("DataCadastro")
+                        .HasColumnName("DataCadastro")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnName("DataNascimento")
                         .HasColumnType("datetime(6)");
@@ -380,11 +384,12 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "9f545566-8088-4620-8084-9bd45bb09afe",
+                            Id = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1",
                             AccessFailedCount = 0,
                             Cidade = "Barra Bonita",
-                            ConcurrencyStamp = "0277410d-4830-4b70-9ce3-a317a8b73110",
+                            ConcurrencyStamp = "74a76e9b-ecd3-4af3-82ad-0f283087e525",
                             Cpf = "39493629830",
+                            DataCadastro = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "rodrigostramantinoli@gmail.com",
                             EmailConfirmed = true,
@@ -392,7 +397,7 @@ namespace Office.Migrations
                             Nome = "ADMIN",
                             NormalizedEmail = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
                             NormalizedUserName = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPHx6YCIrsgOYIDRMK6qCCbn9cDPr4h82RrwGA8owtsgb5ZIpqA4YqX6ewQBIAr1UQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKP0cp//+XMmvylpW9uQO2GcfaCO+cQIOmFK9SmdSgdlE7gkSS9rPkrVNMw0EYlyEQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "45420240",
                             TwoFactorEnabled = false,

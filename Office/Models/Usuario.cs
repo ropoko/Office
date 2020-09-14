@@ -32,6 +32,11 @@ namespace Office.Models
         [StringLength(300)]
         public string Foto { get; set; }
 
+        [Required]
+        [Display(Name = "Data do Cadastro")]
+        [Column("DataCadastro")]
+        public DateTime DataCadastro { get; set; }
+
         [NotMapped]
         [Display(Name = "Perfil")]
         public string Perfis { get; set; }
