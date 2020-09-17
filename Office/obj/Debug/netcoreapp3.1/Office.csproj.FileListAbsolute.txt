@@ -906,3 +906,4 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Details.cshtml.g.cs

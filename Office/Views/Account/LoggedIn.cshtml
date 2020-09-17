@@ -12,12 +12,14 @@
             @Html.DisplayNameFor(model => model.Foto)
         </dt>
         <dd class="col-sm-10">
-            <img src="@Url.Content(Model.Foto)" class="img-fluid fotoUser" width="150" />
-        </dd>
-        <dd class="edit">
-            <a href="#">
-                <i class="far fa-edit fa-lg"></i>
-            </a>
+            @if (Model.Foto == null)
+            {
+                <p>Você não tem uma foto ainda D:</p>
+            }
+            else
+            {
+                <img src="@Url.Content(Model.Foto)" class="img-fluid fotoUser" width="150" />
+            }
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)

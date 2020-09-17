@@ -36,7 +36,14 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Nome)
+                    @if (User.Identity.Name == item.Email)
+                    {
+                        <p>Você</p>
+                    }
+                    else
+                    {
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    }
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cidade)
@@ -51,8 +58,7 @@
                     @Html.DisplayFor(modelItem => item.DataCadastro)
                 </td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-controller="Usuarios" asp-action="Details" asp-route-id="@item.Id">Details</a> 
                 </td>
             </tr>
         }
