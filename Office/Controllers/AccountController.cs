@@ -7,7 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Office.Models;
+using Office.Utils;
 
 namespace Office.Controllers
 {
@@ -16,12 +18,14 @@ namespace Office.Controllers
     public class AccountController : Controller
     {
         private readonly IMapper mapper;
+        private readonly Contexto _context;
         private readonly UserManager<Usuario> userManager;
         private readonly SignInManager<Usuario> signInManager;
         private readonly IWebHostEnvironment webHostEnvironment;
 
-        public AccountController(UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map, IWebHostEnvironment hostEnvironment)
+        public AccountController(UserManager<Usuario> user, SignInManager<Usuario> signIn, IMapper map, IWebHostEnvironment hostEnvironment, Contexto context)
         {
+            _context = context;
             webHostEnvironment = hostEnvironment;
             mapper = map;
             userManager = user;
@@ -61,12 +65,16 @@ namespace Office.Controllers
         }
 
         [Authorize]
-        public IActionResult LoggedIn()
+        public IActionResult LoggedIn(IFormFile Foto)
         {
             try
             {
-                var u = userManager.GetUserAsync(User);
+                if (Foto != null)
+                {
 
+                }
+
+                var u = userManager.GetUserAsync(User);
                 var usu = new Usuario
                 {
                     Cidade = u.Result.Cidade,
@@ -99,6 +107,9 @@ namespace Office.Controllers
             if (!ModelState.IsValid)
                 return View();
 
+            if (!ValidaCpf.IsCpf(userModel.Cpf))
+                return View(userModel);
+
             if (Foto != null)
             {
                 string pasta = Path.Combine(webHostEnvironment.WebRootPath, "img\\usuarios");
@@ -127,11 +138,11 @@ namespace Office.Controllers
 
                 return View(userModel);
             }
-            
+
             await userManager.AddToRoleAsync(usu, "VISITANTE");
             await signInManager.SignInAsync(usu, true);
 
-            TempData["PrimeiroAcesso"] = "OK"; 
+            TempData["PrimeiroAcesso"] = "OK";
 
             return RedirectToAction("LoggedIn");
         }
@@ -148,6 +159,49 @@ namespace Office.Controllers
         public IActionResult AccessDenied()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, Usuario usuario, IFormFile NovaFoto)
+        {
+            if (id != usuario.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (NovaFoto != null)
+                    {
+                        string pasta = Path.Combine(webHostEnvironment.WebRootPath, "img\\usuarios");
+                        var nomeArquivo = Guid.NewGuid().ToString() + "_" + NovaFoto.FileName;
+                        string caminho = Path.Combine(pasta, nomeArquivo);
+
+                        using (var stream = new FileStream(caminho, FileMode.Create))
+                        {
+                            await NovaFoto.CopyToAsync(stream);
+                        }
+
+                        usuario.Foto = "/img/usuarios/" + nomeArquivo;
+                    }
+
+                    _context.Update(usuario);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException ex)
+                {
+                    Console.WriteLine(ex);
+                    throw;
+                }
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewData["CaminhoFoto"] = webHostEnvironment.WebRootPath;
+            return View(usuario);
         }
     }
 

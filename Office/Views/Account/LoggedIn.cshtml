@@ -18,7 +18,8 @@
             }
             else
             {
-                <img src="@Url.Content(Model.Foto)" class="img-fluid fotoUser" width="150" />
+                <img src="@Url.Content(Model.Foto)" class="img-fluid" width="150" />
+                <input id="novaFoto" type="file" asp-for="Foto" accept=".jpg,.jpeg,.png,.pdf,.webm" />
             }
         </dd>
         <dt class="col-sm-2">
@@ -58,6 +59,10 @@
             @Html.DisplayFor(model => model.DataCadastro)
         </dd>
     </dl>
+    <form asp-controller="Account" asp-action="Edit">
+        <button type="submit" class="btn btn-outline-danger" id="editarFoto" asp-route-id="@Model.Id" style="display:none;">Editar Foto</button>
+    </form>
+    
     @* Modal mensagem bem-vindo e explicação reservas *@
     <div class="modal fade" id="modalWelcomeMessage" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog">
@@ -101,5 +106,16 @@
     if (primeiroAcesso == "OK") {
         $('#modalWelcomeMessage').modal("show");
     }
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#novaFoto").on('click', function () {
+                document.getElementById('editarFoto').style.display = "block";
+                $('editarFoto').show();
+                return false;
+            });
+        });
     </script>
 }

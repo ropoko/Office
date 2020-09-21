@@ -51,7 +51,7 @@ namespace Office.Models
         public DateTime DataNascimento { get; set; }
 
         [Display(Name = "CPF")]
-        [Required]
+        [Required(ErrorMessage = "Informe um CPF válido")]
         [Column("Cpf")]
         public string Cpf { get; set; }
 
