@@ -17,12 +17,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
-    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.1.2" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="3.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Views\Pedidos\" />
-    <Folder Include="Views\Pedidos\" />
+    <Folder Include="wwwroot\img\home\" />
     <Folder Include="wwwroot\img\usuarios\" />
     <Folder Include="wwwroot\img\produtos\" />
     <Folder Include="wwwroot\img\produtos\" />

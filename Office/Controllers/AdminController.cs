@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Office.Models;
+using Office.Utils;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -47,6 +48,9 @@ namespace Office.Controllers
         {
             if (!ModelState.IsValid)
                 return View();
+
+            if (!ValidaCpf.IsCpf(userModel.Cpf))
+                return View(userModel);
 
             var perfis = roleManager.Roles;
             ViewData["Perfis"] = new SelectList(perfis, "NormalizedName", "Name");

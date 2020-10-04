@@ -1,7 +1,6 @@
-﻿@model Office.Models.Produto
-
-@{
+﻿@{
     Layout = "_HeaderFooter";
+    var fotos = TempData["Fotos"] as string[];
 }
 
 <div id="DivSlide" class="text-center">
@@ -12,27 +11,34 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img id="imgSlide1" src="#" class="d-block w-100">
-                <div class="carousel-caption d-none d-md-block">
-                    <h4 id="textSlide">First slide label</h4>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img id="imgSlide2" src="~/Home/img/skate2.jpg" class="d-block w-100">
-                <div class="carousel-caption d-none d-md-block">
-                    <h4 id="textSlide">Second slide label</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img id="imgSlide3" src="~/Home/img/skate3.jpg" class="d-block w-100">
-                <div class="carousel-caption d-none d-md-block">
-                    <h4 id="textSlide">Third slide label</h4>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
+            @{ int i = 0; }
+            @foreach (var item in fotos)
+            {
+                i++;
+
+                @if (i > 0)
+                {
+                    <div class="carousel-item active">
+                        <img id="imgSlide1" src="@Url.Content("~/img/home/" + item)" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4 id="textSlide">First slide label</h4>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+
+                    i = -787;
+                }
+                else
+                {
+                    <div class="carousel-item">
+                        <img id="imgSlide1" src="@Url.Content("~/img/home/" + item)" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h4 id="textSlide">First slide label</h4>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </div>
+                    </div>
+                }
+            }
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
