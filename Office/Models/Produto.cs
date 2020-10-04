@@ -17,6 +17,9 @@ namespace Office.Models
         [Required]
         public decimal Valor { get; set; }
 
+        [StringLength(100)]
+        public string Descricao { get; set; }
+
         [Display(Name = "Marca")]
         [Required]
         public string Marca { get; set; }

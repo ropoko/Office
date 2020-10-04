@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Office.Models.Produto>
+
+@{
     Layout = "_HeaderFooter";
     var fotos = TempData["Fotos"] as string[];
 }
@@ -53,77 +55,27 @@
 
 <div class="container">
     <div class="row text-center">
-        <div class="col-md-3">
-            <div class="card py-0 shadow-sm" id="card1">
-                <div class="card-top" id="CardImg">
-                    <img src="~/Home/img/shapes.jpeg" class="responsive" id="imgCard1">
-                </div>
-                <div class="card-body" id="CardBody1">
-                    <p class="card-text">This is a wider card additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+        <!-- cards -->
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3">
+                <div class="card py-0 shadow-sm" id="card1">
+                    <div class="card-top" id="CardImg">
+                        <img src="@Url.Content(item.Foto)" class="responsive" id="imgCard1">
+                    </div>
+                    <div class="card-body" id="CardBody1">
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.Descricao)</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">9 mins</small>
                         </div>
-                        <small class="text-muted">9 mins</small>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- card 2-->
-        <div class="col-md-3">
-            <div class="card py-0 shadow-sm" id="card2">
-                <div class="card-top" id="CardImg">
-                    <img src="~/Home/img/bone.jpeg" class="responsive" id="imgCard2">
-                </div>
-                <div class="card-body" id="CardBody2">
-                    <p class="card-text">This is a wider card additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- card 3-->
-        <div class="col-md-3">
-            <div class="card py-0 shadow-sm" id="card3">
-                <div class="card-top" id="CardImg">
-                    <img src="~/Home/img/camisa.jpeg" class="responsive" id="imgCard3">
-                </div>
-                <div class="card-body" id="CardBody3">
-                    <p class="card-text">This is a wider card additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- card 4-->
-        <div class="col-md-3">
-            <div class="card py-0 shadow-sm" id="card4">
-                <div class="card-top" id="CardImg">
-                    <img src="~/Home/img/foto.png" class="responsive" id="imgCard4">
-                </div>
-                <div class="card-body" id="CardBody4">
-                    <p class="card-text">This is a wider card additional content. This content is a little bit longer.</p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                        </div>
-                        <small class="text-muted">9 mins</small>
-                    </div>
-                </div>
-            </div>
-        </div>
+        }
     </div>
 </div>
 
