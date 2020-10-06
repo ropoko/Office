@@ -67,7 +67,7 @@ namespace Office.Controllers
         // POST: Produtos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto")] Produto produto, IFormFile Foto)
+        public async Task<IActionResult> Create([Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto,Descricao")] Produto produto, IFormFile Foto)
         {
             if (ModelState.IsValid)
             {
@@ -112,7 +112,7 @@ namespace Office.Controllers
         // POST: Produtos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto")] Produto produto, IFormFile NovaFoto)
+        public async Task<IActionResult> Edit(int id, [Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto,Descricao")] Produto produto, IFormFile NovaFoto)
         {
             if (id != produto.IDProduto)
             {

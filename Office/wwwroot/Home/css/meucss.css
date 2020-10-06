@@ -68,14 +68,16 @@
   margin-bottom: 1.5rem;
 }
 
-#CardBody1, #CardBody2, #CardBody3, #CardBody4{
-  width: auto;
-  height: auto;
+#CardBody1, #CardBody2, #CardBody3, #CardBody4 {
+    width: auto;
+    height: 45px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #CardImg{
   width: 100%;
-  max-height: auto;
 }
 
 #btnLogin, #btnCesta{
@@ -86,4 +88,28 @@
 .responsive {
   width: 100%;
   max-height: 338px;
+}
+
+@media(max-width: 720px){
+    #card1, #card2, #card3, #card4 {
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    #CardBody1, #CardBody2, #CardBody3, #CardBody4 {
+        width: auto;
+        height: 45px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    #CardImg {
+        width: 45vh;
+        height: 45vh;
+    }
+
+    #imgCard{
+
+    }
 }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Office.Controllers
 {
-    [Authorize(Roles = "VISITANTE")]
+    [Authorize]
     [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true, Duration = 180)]
     public class PedidosController : Controller
     {

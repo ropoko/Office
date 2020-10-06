@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="~/Home/css/login.css" />
     <link rel="stylesheet" href="~/FontAwesome/css/all.css" />
     <link rel="stylesheet" href="~/Usuarios/Foto.css" />
+    @*<link rel="stylesheet" href="~/Pedidos/main.css" />*@
 </head>
 <body>
     <header>
@@ -91,7 +92,6 @@
     <main id="main" class="container-fluid" role="main">
         @RenderBody()
     </main>
-
     <footer class="border-top footer text-muted">
         <div class="container-fluid text-center">
             &copy; 2020 - Office Street
@@ -105,5 +105,6 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     @RenderSection("Scripts", required: false)
+    @RenderSection("Styles", required: false)
 </body>
 </html>

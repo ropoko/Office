@@ -53,30 +53,32 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row text-center">
-        <!-- cards -->
-        @foreach (var item in Model)
-        {
-            <div class="col-md-3">
-                <div class="card py-0 shadow-sm" id="card1">
-                    <div class="card-top" id="CardImg">
-                        <img src="@Url.Content(item.Foto)" class="responsive" id="imgCard1">
-                    </div>
-                    <div class="card-body" id="CardBody1">
-                        <p class="card-text">@Html.DisplayFor(modelItem => item.Descricao)</p>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
-                            </div>
-                            <small class="text-muted">9 mins</small>
+<div class="py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <!-- cards -->
+            @{ int a = 0; }
+            @foreach (var item in Model)
+            {
+                a++;
+
+                if (a > 4)
+                {
+                    break;
+                }
+
+                <div class="col-md-3">
+                    <div class="card py-0 shadow-sm" id="card1">
+                        <div class="card-top" id="CardImg">
+                            <img src="@Url.Content(item.Foto)" class="responsive" img="imgCard">
                         </div>
+                        <div class="card-body" id="CardBody1">
+                            <p class="card-text">@Html.DisplayFor(modelItem => item.Descricao)</p>
+                        </div>
+                        <button type="button" href="#" class="btn btn-sm btn-outline-secondary">View</button>
                     </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
     </div>
 </div>
-
-

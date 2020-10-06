@@ -24,6 +24,11 @@ namespace Office
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<MvcOptions>(options =>
+            {
+                options.Filters.Add(new RequireHttpsAttribute());
+            });
+
             services.AddMvc(op =>
             {
                 op.CacheProfiles.Add("Default30",
@@ -35,6 +40,12 @@ namespace Office
             });
             services.AddControllersWithViews();
             services.AddDbContext<Contexto>(options => options.UseMySql(Configuration.GetConnectionString("Conexao")));
+
+            services.AddAuthentication().AddFacebook(op =>
+            {
+                op.AppId = Configuration["Authentication:Facebook:AppId"];
+                op.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
 
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
