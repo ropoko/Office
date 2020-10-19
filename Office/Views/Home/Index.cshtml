@@ -75,7 +75,7 @@
                         <div class="card-body" id="CardBody1">
                             <p class="card-text">@Html.DisplayFor(modelItem => item.Descricao)</p>
                         </div>
-                        <button type="button" href="#" class="btn btn-sm btn-outline-secondary">View</button>
+                        <a asp-action="Details" asp-controller="Produtos" asp-route-id="@item.IDProduto" class="btn btn-sm btn-outline-secondary"> Visualizar </a>
                     </div>
                 </div>
             }

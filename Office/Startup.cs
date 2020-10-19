@@ -41,15 +41,10 @@ namespace Office
             services.AddControllersWithViews();
             services.AddDbContext<Contexto>(options => options.UseMySql(Configuration.GetConnectionString("Conexao")));
 
-            services.AddAuthentication().AddFacebook(op =>
-            {
-                op.AppId = Configuration["Authentication:Facebook:AppId"];
-                op.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
-
             services.AddRazorPages().AddRazorRuntimeCompilation();
 
-            services.AddIdentity<Usuario, IdentityRole>(options => {
+            services.AddIdentity<Usuario, IdentityRole>(options =>
+            {
                 options.Password.RequiredLength = 8;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireDigit = false;
@@ -62,6 +57,12 @@ namespace Office
                 options.Lockout.MaxFailedAccessAttempts = 5;
 
             }).AddEntityFrameworkStores<Contexto>().AddDefaultTokenProviders();
+
+            services.AddAuthentication().AddFacebook(op =>
+            {
+                op.AppId = Configuration["Authentication:Facebook:AppId"];
+                op.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
 
             services.AddAutoMapper(typeof(Startup));
         }

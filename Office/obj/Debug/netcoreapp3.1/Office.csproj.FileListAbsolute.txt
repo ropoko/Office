@@ -846,6 +846,7 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categ
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Categorias\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Galeria\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Pedidos\Index.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Create.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Delete.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Produtos\Details.cshtml.g.cs
@@ -869,4 +870,3 @@ C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.dll
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.pdb
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.genruntimeconfig.cache
 C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Office.csprojAssemblyReference.cache
-C:\Users\Rodrigo\Desktop\Office\Office\obj\Debug\netcoreapp3.1\Razor\Views\Pedidos\Index.cshtml.g.cs

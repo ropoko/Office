@@ -13,7 +13,7 @@ using Office.Models;
 
 namespace Office.Controllers
 {
-    [Authorize(Roles = "ADMIN")]
+    [Authorize]
     public class ProdutosController : Controller
     {
         private readonly Contexto _context;
