@@ -17,7 +17,7 @@ namespace Office.Models
         [Display(Name = "Usuário")]
         [Required]
         [Column("IDCliente")]
-        public int IDCliente { get; set; }
+        public string IDCliente { get; set; }
         public Usuario Usuario { get; set; }
 
         [Display(Name = "Data da Busca")]

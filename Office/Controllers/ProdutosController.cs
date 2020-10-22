@@ -13,7 +13,6 @@ using Office.Models;
 
 namespace Office.Controllers
 {
-    [Authorize]
     public class ProdutosController : Controller
     {
         private readonly Contexto _context;
@@ -26,13 +25,33 @@ namespace Office.Controllers
         }
 
         // GET: Produtos
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Index()
         {
             return View(await _context.Produtos.ToListAsync());
         }
 
         // GET: Produtos/Details/5
-        public async Task<IActionResult> Details(int? id)
+        [Authorize(Roles = "ADMIN")]
+        public async Task<IActionResult> AdmDetails(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var produto = await _context.Produtos
+                .FirstOrDefaultAsync(m => m.IDProduto == id);
+            if (produto == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["CaminhoFoto"] = webHostEnvironment.WebRootPath;
+            return View(produto);
+        }
+
+        public async Task<IActionResult> UserDetails(int? id)
         {
             if (id == null)
             {
@@ -51,6 +70,7 @@ namespace Office.Controllers
         }
 
         // GET: Produtos/Create
+        [Authorize(Roles = "ADMIN")]
         public IActionResult Create()
         {
             var lista = new List<string>();
@@ -67,6 +87,7 @@ namespace Office.Controllers
         // POST: Produtos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Create([Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto,Descricao")] Produto produto, IFormFile Foto)
         {
             if (ModelState.IsValid)
@@ -94,6 +115,7 @@ namespace Office.Controllers
         }
 
         // GET: Produtos/Edit/5
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -112,6 +134,7 @@ namespace Office.Controllers
         // POST: Produtos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Edit(int id, [Bind("IDProduto,Nome,Valor,Marca,Categoria,Foto,Descricao")] Produto produto, IFormFile NovaFoto)
         {
             if (id != produto.IDProduto)
@@ -158,6 +181,7 @@ namespace Office.Controllers
         }
 
         // GET: Produtos/Delete/5
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -178,6 +202,7 @@ namespace Office.Controllers
         // POST: Produtos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ADMIN")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var produto = await _context.Produtos.FindAsync(id);

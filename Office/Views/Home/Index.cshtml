@@ -75,7 +75,14 @@
                         <div class="card-body" id="CardBody1">
                             <p class="card-text">@Html.DisplayFor(modelItem => item.Descricao)</p>
                         </div>
-                        <a asp-action="Details" asp-controller="Produtos" asp-route-id="@item.IDProduto" class="btn btn-sm btn-outline-secondary"> Visualizar </a>
+                        @if (User.IsInRole("ADMIN"))
+                        {
+                            <a asp-action="AdmDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto" class="btn btn-sm btn-outline-secondary"> Visualizar </a>
+                        }
+                        else
+                        {
+                            <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto" class="btn btn-sm btn-outline-secondary"> Visualizar </a>
+                        }
                     </div>
                 </div>
             }

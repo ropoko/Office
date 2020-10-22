@@ -9,14 +9,14 @@ using Office;
 namespace Office.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200914100948_Initial")]
+    [Migration("20201022134745_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.8")
+                .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -48,15 +48,15 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1",
-                            ConcurrencyStamp = "47bf6784-636d-454f-bf6f-6e2491769826",
+                            Id = "c4c98075-73ec-4552-a87d-f1b695d42d2d",
+                            ConcurrencyStamp = "0a05f2ce-31a3-4c18-9fdd-e368bd4916e3",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "47697c2d-6bb4-404c-9868-f8385ce16ab3",
-                            ConcurrencyStamp = "7c596db7-596e-44bf-9985-296364718ed6",
+                            Id = "ace5e1f7-f34a-4f8b-8b3b-2f5711e6ee4c",
+                            ConcurrencyStamp = "a6f95871-17d2-4f35-b2ef-aa2e9feba78b",
                             Name = "VISITANTE",
                             NormalizedName = "VISITANTE"
                         });
@@ -156,8 +156,8 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1",
-                            RoleId = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1"
+                            UserId = "c4c98075-73ec-4552-a87d-f1b695d42d2d",
+                            RoleId = "c4c98075-73ec-4552-a87d-f1b695d42d2d"
                         });
                 });
 
@@ -241,9 +241,10 @@ namespace Office.Migrations
                     b.Property<DateTime>("DataPedido")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("IDCliente")
+                    b.Property<string>("IDCliente")
+                        .IsRequired()
                         .HasColumnName("IDCliente")
-                        .HasColumnType("int");
+                        .HasColumnType("longtext CHARACTER SET utf8mb4");
 
                     b.Property<string>("UsuarioId")
                         .HasColumnType("varchar(85) CHARACTER SET utf8mb4");
@@ -267,6 +268,10 @@ namespace Office.Migrations
 
                     b.Property<int?>("CategoriasIDCategoria")
                         .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("varchar(100) CHARACTER SET utf8mb4")
+                        .HasMaxLength(100);
 
                     b.Property<string>("Foto")
                         .HasColumnType("varchar(300) CHARACTER SET utf8mb4")
@@ -384,10 +389,10 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d4aae1a5-d6e8-4261-9243-b96bc2726ab1",
+                            Id = "c4c98075-73ec-4552-a87d-f1b695d42d2d",
                             AccessFailedCount = 0,
                             Cidade = "Barra Bonita",
-                            ConcurrencyStamp = "74a76e9b-ecd3-4af3-82ad-0f283087e525",
+                            ConcurrencyStamp = "88d82081-3e17-4cbb-a37d-108b1f40e33f",
                             Cpf = "39493629830",
                             DataCadastro = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -397,9 +402,9 @@ namespace Office.Migrations
                             Nome = "ADMIN",
                             NormalizedEmail = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
                             NormalizedUserName = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKP0cp//+XMmvylpW9uQO2GcfaCO+cQIOmFK9SmdSgdlE7gkSS9rPkrVNMw0EYlyEQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEO4+lh1LtzqUhEf809KDl5DT9AKse/I2aDQRAyTSkNXYy5parR101i3Mrgd9YSoXUA==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "45420240",
+                            SecurityStamp = "40893240",
                             TwoFactorEnabled = false,
                             UserName = "rodrigostramantinoli@gmail.com"
                         });
