@@ -88,5 +88,10 @@ namespace Office.Controllers
 
             return RedirectToAction("Register", "Admin");
         }
+
+        public IActionResult DashBoard()
+        {
+            return View();
+        }
     }
 }

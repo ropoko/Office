@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Office.Models;
 using System;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace Office.Controllers
@@ -29,22 +30,35 @@ namespace Office.Controllers
 
         public async Task<IActionResult> Reservar(int id)
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Account", "Login");
+            }
+
             var today = DateTime.Now;
             var user = await _userManager.GetUserAsync(User);
-            //var user = _context.Users.Find(User.Identity.Name);
+
+            // Pega o id do último pedido feito 
+            var ultimoPedido = _context.Pedidos.OrderByDescending(x => x.IDPedido).FirstOrDefault().IDPedido;
 
             var pedido = new Pedido
             {
+                IDPedido = ultimoPedido + 1,
                 DataPedido = DateTime.Now,
                 DataBusca = today.AddDays(14),
                 IDCliente = user.Id
             };
 
-            _ = new ItemPedido
+            var itemPedido = new ItemPedido
             {
                 IDProduto = id,
                 IDPedido = pedido.IDPedido
             };
+
+            _context.Pedidos.Add(pedido);
+            _context.ItensPedidos.Add(itemPedido);
+
+            await _context.SaveChangesAsync();
 
             return RedirectToAction("Index", "Home");
         }

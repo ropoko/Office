@@ -153,7 +153,7 @@ namespace Office.Controllers
         public async Task<IActionResult> Logout()
         {
             await signInManager.SignOutAsync();
-            var a = signInManager.GetExternalLoginInfoAsync().Result;
+            _ = signInManager.GetExternalLoginInfoAsync().Result;
             return RedirectToAction("Index", "Home");
         }
 

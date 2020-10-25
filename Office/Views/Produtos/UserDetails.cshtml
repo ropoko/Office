@@ -51,7 +51,7 @@
             Faça sua reserva -->
         </dt>
         <dd>
-            <a asp-controller="Pedidos" asp-action="Reservar" type="text/asp">Reservar</a>
+            <a asp-controller="Pedidos" asp-route-id="@Model.IDProduto" asp-action="Reservar" type="text/asp">Reservar</a>
         </dd>
     </dl>
 </div>
