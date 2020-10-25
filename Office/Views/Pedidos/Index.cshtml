@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IEnumerable<Office.Models.ItemPedido>
+
+@{
     Layout = "_HeaderFooter";
     ViewData["Title"] = "Carrinho | Office Street";
 }
@@ -25,9 +27,13 @@
                 <tbody>
                     <tr>
                         <td class="cart_product">
+                            item
+                        </td>
                         <td class="cart_description">
+                            teste produtos
                         </td>
                         <td class="cart_price">
+                            preço
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
@@ -38,49 +44,7 @@
                             </div>
                         </td>
                         <td class="cart_total">
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td class="cart_product">
-                        </td>
-                        <td class="cart_description">
-                        </td>
-                        <td class="cart_price">
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                       autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cart_product">
-                        </td>
-                        <td class="cart_description">
-                        </td>
-                        <td class="cart_price">
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                       autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
+                            total
                         </td>
                         <td class="cart_delete">
                             <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>

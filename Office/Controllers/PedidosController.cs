@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Office.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
@@ -23,8 +24,22 @@ namespace Office.Controllers
         }
 
         // Exibe os pedidos feitos pelo usuário
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(User);
+
+            var meuPedido = new List<Pedido>();
+            var meusItems = new List<ItemPedido>();
+
+            foreach (var item in meuPedido)
+            {
+                if (user.Id == item.IDCliente)
+                {
+                    var itens = _context.ItensPedidos.Select(x => x.IDPedido == item.IDPedido);
+                    return View(itens);
+                }
+            }
+
             return View();
         }
 
@@ -38,8 +53,12 @@ namespace Office.Controllers
             var today = DateTime.Now;
             var user = await _userManager.GetUserAsync(User);
 
-            // Pega o id do último pedido feito 
-            var ultimoPedido = _context.Pedidos.OrderByDescending(x => x.IDPedido).FirstOrDefault().IDPedido;
+            int ultimoPedido = 0;
+            if (_context.Pedidos.ToList().Count > 0)
+            {
+                // Pega o id do último pedido feito 
+                ultimoPedido = _context.Pedidos.OrderByDescending(x => x.IDPedido).SingleOrDefault().IDPedido;
+            }
 
             var pedido = new Pedido
             {
