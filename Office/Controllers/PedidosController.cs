@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Newtonsoft.Json;
 using Office.Models;
 using System;
 using System.Collections.Generic;
@@ -28,19 +30,23 @@ namespace Office.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
 
-            var meuPedido = new List<Pedido>();
-            var meusItems = new List<ItemPedido>();
+            var meuPedido = _context.Pedidos.ToList();
+            var meusItems = new List<Produto>();
 
             foreach (var item in meuPedido)
             {
                 if (user.Id == item.IDCliente)
                 {
-                    var itens = _context.ItensPedidos.Select(x => x.IDPedido == item.IDPedido);
-                    return View(itens);
+                    var itens = _context.ItensPedidos.SingleOrDefault(x => x.IDPedido == item.IDPedido);
+
+                    var produtos = _context.Produtos.SingleOrDefault(x => x.IDProduto == itens.IDProduto);
+
+                    meusItems.Add(produtos);
                 }
             }
 
-            return View();
+            TempData["Pedidos"] = JsonConvert.SerializeObject(meuPedido);
+            return View(meusItems.AsQueryable());
         }
 
         public async Task<IActionResult> Reservar(int id)
@@ -80,6 +86,21 @@ namespace Office.Controllers
             await _context.SaveChangesAsync();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public  void ExcluirPedido (int item)
+        {
+            //var user = _userManager.GetUserId(User);
+
+            //var pedidos = JsonConvert.DeserializeObject(TempData["Pedidos"].ToString());
+
+            //foreach (var it in pedidos)
+            //{
+            //    if (user == it.IDCliente)
+            //    {
+            //        var itemPedido = _context.ItensPedidos.SingleOrDefault(x => x.IDProduto == item);
+            //    }
+            //}
         }
     }
 }

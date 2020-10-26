@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Office.Models.ItemPedido>
+﻿@model IEnumerable<Office.Models.Produto>
 
 @{
     Layout = "_HeaderFooter";
@@ -6,56 +6,81 @@
 }
 
 <h1>Meus pedidos</h1>
-<section id="cart_items">
-    <div class="container">
-        <div class="breadcrumbs">
-            <ol class="breadcrumb">
-            </ol>
-        </div>
-        <div class="table-responsive cart_info">
-            <table class="table table-condensed">
-                <thead>
-                    <tr class="cart_menu">
-                        <td class="image">Item</td>
-                        <td class="description">Descrição</td>
-                        <td class="price">Preço</td>
-                        <td class="quantity">Quantidade</td>
-                        <td class="total">Total</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="cart_product">
-                            item
-                        </td>
-                        <td class="cart_description">
-                            teste produtos
-                        </td>
-                        <td class="cart_price">
-                            preço
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1"
-                                       autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            total
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
 
-@section Styles {
-    <link href="@Url.Content("~/Pedidos/main.css")" rel="stylesheet" type="text/css" />
+@if (Model.Count() == 0 || Model == null)
+{
+    <h2>Voce não realizou nenhuma reserva</h2>
+}
+else
+{
+    <section id="cart_items">
+        <div class="container">
+            <div class="table-responsive cart_info">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr class="cart_menu">
+                            <td class="image">Item</td>
+                            <td class="description">Descrição</td>
+                            <td class="price">Preço</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="cart_product">
+                                    @item.Nome
+                                </td>
+                                <td class="cart_description">
+                                    @item.Descricao
+                                </td>
+                                <td class="cart_price">
+                                    @item.Valor
+                                </td>
+                                <td>
+                                    <a data-toggle="collapse" href="#info">+</a>
+                                </td>
+                                <td class="cart_delete">
+                                    <a class="cart_quantity_delete" onclick="ExcluirPedido('@item.IDProduto')">
+                                        <i class="fa fa-times-circle">
+                                        </i>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr class="collapse" id="info">
+                                <td>
+                                    aaaaa
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+}
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function ExcluirPedido(item) {
+            swal({
+                title: "Tem certeza que deseja cancelar a reserva?",
+                text: "Essa ação não poderá ser desfeita!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        $.get("/Pedidos/ExcluirPedido", { item }, function () { });
+                        swal("Sua reserva foi cancelada!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Sua reserva está segura!");
+                    }
+                });
+        }
+    </script>
 }

@@ -74,7 +74,7 @@ namespace Office
                 PasswordHash = hash.HashPassword(null, "teste"),
                 SecurityStamp = hash.GetHashCode().ToString(),
 				Cidade = "Barra Bonita",
-				Cpf = "39493629830"
+				Cpf = "394.936.298-30"
             });
 
             mb.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
