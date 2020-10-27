@@ -50,11 +50,22 @@ namespace Office.Controllers
 
         public async Task<IActionResult> Reservar(int id)
         {
+            // QUANDO O MESMO USUARIO TENTA FAZER O MESMO PEDIDO 2X FUNCIONA
+            // MAS QUANDO 2 USUARIOS DIFERENTES TENTAM RESERVAR O MESMO PRODUTO, ESTA FALHANDO
+
+
             // Não pode reservar o mesmo produto 2x
-            var mesmoProduto = _context.ItensPedidos.Where(x => x.IDProduto.Equals(id));
-            if (mesmoProduto.Count() > 1)
+            string userID = _userManager.GetUserId(User);
+            var mesmoProduto = _context.ItensPedidos.SingleOrDefault(x => x.IDProduto.Equals(id));
+
+            if (mesmoProduto != null)
             {
-                return RedirectToAction("Index", "Home");
+                var Pedido = _context.Pedidos.Where(y => y.IDPedido == mesmoProduto.IDPedido && y.IDCliente == userID);
+
+                if (Pedido.Count() > 0)
+                {
+                    return View();
+                }
             }
 
             if (!User.Identity.IsAuthenticated)

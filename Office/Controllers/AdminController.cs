@@ -9,6 +9,7 @@ using Office.Models;
 using Office.Utils;
 using System;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Office.Controllers
@@ -20,13 +21,15 @@ namespace Office.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly UserManager<Usuario> userManager;
         private readonly IWebHostEnvironment webHostEnvironment;
+        private Contexto _context;
 
-        public AdminController(RoleManager<IdentityRole> role, UserManager<Usuario> user, IMapper map, IWebHostEnvironment hostEnvironment)
+        public AdminController(RoleManager<IdentityRole> role, UserManager<Usuario> user, IMapper map, IWebHostEnvironment hostEnvironment, Contexto contexto)
         {
             webHostEnvironment = hostEnvironment;
             roleManager = role;
             mapper = map;
             userManager = user;
+            _context = contexto;
         }
 
 
@@ -92,6 +95,12 @@ namespace Office.Controllers
         public IActionResult DashBoard()
         {
             return View();
+        }
+
+        public IActionResult Reservas()
+        {
+            var lista = _context.Pedidos.ToList();
+            return View(lista);
         }
     }
 }
