@@ -51,7 +51,34 @@
             Faça sua reserva -->
         </dt>
         <dd>
-            <a asp-controller="Pedidos" asp-route-id="@Model.IDProduto" asp-action="Reservar" type="text/asp">Reservar</a>
+            <a onclick="Reservar('@Model.IDProduto')">Reservar</a>
         </dd>
     </dl>
 </div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+        function Reservar(item) {
+            swal({
+                title: "Deseja reservar este item?",
+                text: "Vá até a guia SOBRE, caso esteja com dúvidas sobre como funciona o sistema de reservas.",
+                icon: "success",
+                buttons: {
+                    cancel: "Cancelar",
+                    reservar: true
+                }
+            })
+                .then((reservar) => {
+                    if (reservar) {
+                        $.get("/Pedidos/Reservar", { item }, function () { });
+                        swal("Sua reserva foi feita!", {
+                            icon: "success",
+                        });
+                    } else {
+                        swal("Reserva cancelada!");
+                    }
+                });
+        }
+    </script>
+}

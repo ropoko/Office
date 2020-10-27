@@ -45,12 +45,18 @@ namespace Office.Controllers
                 }
             }
 
-            TempData["Pedidos"] = JsonConvert.SerializeObject(meuPedido);
             return View(meusItems.AsQueryable());
         }
 
         public async Task<IActionResult> Reservar(int id)
         {
+            // Não pode reservar o mesmo produto 2x
+            var mesmoProduto = _context.ItensPedidos.Where(x => x.IDProduto.Equals(id));
+            if (mesmoProduto.Count() > 1)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
             if (!User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Account", "Login");
@@ -88,19 +94,11 @@ namespace Office.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public  void ExcluirPedido (int item)
+        public void ExcluirPedido(int item)
         {
-            //var user = _userManager.GetUserId(User);
+            var user = _userManager.GetUserId(User);
 
-            //var pedidos = JsonConvert.DeserializeObject(TempData["Pedidos"].ToString());
-
-            //foreach (var it in pedidos)
-            //{
-            //    if (user == it.IDCliente)
-            //    {
-            //        var itemPedido = _context.ItensPedidos.SingleOrDefault(x => x.IDProduto == item);
-            //    }
-            //}
+            _context.ItensPedidos.SingleOrDefault(x => x.IDProduto == item);
         }
     }
 }
