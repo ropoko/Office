@@ -71,7 +71,7 @@
             })
                 .then((reservar) => {
                     if (reservar) {
-                        $.get("/Pedidos/Reservar", { item }, function () { });
+                        $.get("/Pedidos/Reservar", { id: item }, function () { });
                         swal("Sua reserva foi feita!", {
                             icon: "success",
                         });
