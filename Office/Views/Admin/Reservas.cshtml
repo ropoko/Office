@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<Office.Models.Pedido>
 
-@{ 
+@{
     Layout = "Admin/_LayoutAdmin";
 }
 
@@ -9,7 +9,34 @@
     <h1>Ainda não existem reservas!</h1>
 }
 
-@foreach (var item in Model)
-{
-    <h1>@item.IDPedido</h1>
-}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Usuário
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataPedido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataBusca)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                   <p>Nome usuarios</p>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataPedido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataBusca)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
