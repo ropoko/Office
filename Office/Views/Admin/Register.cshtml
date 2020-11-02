@@ -63,3 +63,14 @@
         <a asp-controller="Usuarios" asp-action="Index">Back to List</a>
     </div>
 </div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+
+    <script>
+        $(function () {
+            $("#Cpf").mask("999.999.999-99");
+        });
+    </script>
+}
