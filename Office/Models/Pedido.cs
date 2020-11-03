@@ -12,6 +12,7 @@ namespace Office.Models
 
         [Display(Name = "Data do Pedido")]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DataPedido { get; set; }
 
         [Display(Name = "Usuário")]
@@ -22,6 +23,7 @@ namespace Office.Models
 
         [Display(Name = "Data da Busca")]
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DataBusca { get; set; }
     }
 }

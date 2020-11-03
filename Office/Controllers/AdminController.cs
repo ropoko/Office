@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Office.Models;
 using Office.Utils;
 using System;
@@ -100,22 +101,7 @@ namespace Office.Controllers
 
         public IActionResult Reservas()
         {
-            var lista = _context.Pedidos.ToList();
-
-            var usuarios = new List<string>();
-
-            foreach (var item in lista)
-            {
-                var usu = _context.Usuarios.SingleOrDefault(x => x.Id.Equals(item.IDCliente)).Nome;
-
-                if (usu != null)
-                    usuarios.Add(usu);
-            }
-
-            if (usuarios.Count > 0)
-            {
-                ViewData["Usuario"] = usuarios;
-            }
+            var lista = _context.Pedidos.Include(p => p.Usuario).ToList();
 
             return View(lista);
         }

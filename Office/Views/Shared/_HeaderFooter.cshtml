@@ -25,46 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropbtn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Masculino
-                        </a>
-                        <div class="dropdown-content" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Jeans</a>
-                            <a class="dropdown-item" href="#">Camisetas</a>
-                            <a class="dropdown-item" href="#">Acessórios</a>
-                            <a class="dropdown-item" href="#">Tênis</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropbtn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Feminino
-                        </a>
-                        <div class="dropdown-content" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Jeans</a>
-                            <a class="dropdown-item" href="#">Camisetas</a>
-                            <a class="dropdown-item" href="#">Acessórios</a>
-                            <a class="dropdown-item" href="#">Tênis</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropbtn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Infantil
-                        </a>
-                        <div class="dropdown-content" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Jeans</a>
-                            <a class="dropdown-item" href="#">Camisetas</a>
-                            <a class="dropdown-item" href="#">Acessórios</a>
-                            <a class="dropdown-item" href="#">Tênis</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle dropbtn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Skate
-                        </a>
-                        <div class="dropdown-content" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Shapes</a>
-                            <a class="dropdown-item" href="#">Acessórios</a>
-                        </div>
+                        @Html.ActionLink("Ver Produtos", "Products", "Produtos", null, null, null, null, new { @class = "nav-link dropbtn" })
                     </li>
                     <li class="nav-item dropdown">
                         @Html.ActionLink("Galeria", "Index", "Galeria", null, null, null, null, new { @class = "nav-link dropbtn" })

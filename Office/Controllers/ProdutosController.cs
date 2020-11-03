@@ -217,6 +217,11 @@ namespace Office.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult Products()
+        {
+            return View();
+        }
+
         private bool ProdutoExists(int id)
         {
             return _context.Produtos.Any(e => e.IDProduto == id);

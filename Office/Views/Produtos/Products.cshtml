@@ -1,0 +1,234 @@
+﻿@model IEnumerable<Office.Models.Produto>
+
+@{
+    ViewData["Title"] = "Office Street | Produtos";
+    Layout = "_HeaderFooter";
+}
+
+<div class="header-middle">
+    <!--header-middle-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 clearfix">
+                <div class="logo pull-left">
+                    <div class="logo-overlay">
+                        <div class="overlay-content">
+                            <a href="produtos.html" id="logo"><img src="imagens/home/logo.png" alt="" /></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 clearfix">
+                <div class="shop-menu clearfix pull-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="local-loja.html"><i class="fa fa-crosshairs"></i> Localização</a></li>
+                        <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Carrinho</a></li>
+                        <li><a href="produtos.html"><i class="fa fa-bookmark"></i> Produtos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--/header-middle-->
+
+<div class="header-bottom">
+    <!--header-bottom-->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="search_box pull-right">
+                    <input type="text" placeholder="Procurar" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+	</header>
+
+<section id="advertisement">
+    <div class="container">
+        <img src="images/shop/advertisement.jpg" alt="" />
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="left-sidebar">
+                    <h2>Categorias</h2>
+                    <div class="panel-group category-products" id="accordian">
+                        <!--category-productsr-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#sportswear">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Marcas
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="sportswear" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="">Nike </a></li>
+                                        <li><a href="">DC Shoes </a></li>
+                                        <li><a href="">Adidas </a></li>
+                                        <li><a href="">New Starter </a></li>
+                                        <li><a href="">Yourface </a></li>
+                                        <li><a href="">HD </a></li>
+                                        <li><a href="">Spit Fire </a></li>
+                                        <li><a href="">Black Sheep </a></li>
+                                        <li><a href="">Chronic </a></li>
+                                        <li><a href="">Freedom Fog </a></li>
+                                        <li><a href="">Vans </a></li>
+                                        <li><a href="">Blunch </a></li>
+                                        <li><a href="">Santa Cruz </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#mens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Homem
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="mens" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="">Fendi</a></li>
+                                        <li><a href="">Guess</a></li>
+                                        <li><a href="">Valentino</a></li>
+                                        <li><a href="">Dior</a></li>
+                                        <li><a href="">Versace</a></li>
+                                        <li><a href="">Armani</a></li>
+                                        <li><a href="">Prada</a></li>
+                                        <li><a href="">Dolce and Gabbana</a></li>
+                                        <li><a href="">Chanel</a></li>
+                                        <li><a href="">Gucci</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordian" href="#womens">
+                                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                                        Mulheres
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="womens" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <ul>
+                                        <li><a href="">Fendi</a></li>
+                                        <li><a href="">Guess</a></li>
+                                        <li><a href="">Valentino</a></li>
+                                        <li><a href="">Dior</a></li>
+                                        <li><a href="">Versace</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Criança</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Skate</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Acessório</a></h4>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title"><a href="#">Tênis</a></h4>
+                            </div>
+                        </div>
+                    </div><!--/category-productsr-->
+
+                    <div class="price-range">
+                        <!--price-range-->
+                        <h2>Preços</h2>
+                        <div class="well">
+                            <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="600" data-slider-step="5" data-slider-value="[250,450]" id="sl2"><br />
+                            <b>R$ 0</b> <b class="pull-right">R$ 600</b>
+                        </div>
+                    </div><!--/price-range-->
+
+                    <div class="shipping text-center">
+                        <!--shipping-->
+                        <img src="images/home/shipping.jpg" alt="" />
+                    </div><!--/shipping-->
+
+                </div>
+            </div>
+
+            <div class="col-sm-9 padding-right">
+                <div class="features_items">
+                    <!--features_items-->
+                    <h2 class="title text-center">Produtos</h2>
+                    <div class="col-sm-4">
+                        <div class="product-image-wrapper">
+                            <div class="single-products">
+                                <div class="productinfo text-center">
+                                    <img src="images/shop/product12.jpg" alt="" />
+                                    <h2>$56</h2>
+                                    <p>Easy Polo Black Edition</p>
+                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar ao carrinho</a>
+                                </div>
+                                <div class="product-overlay">
+                                    <div class="overlay-content">
+                                        <h2>$56</h2>
+                                        <p>Easy Polo Black Edition</p>
+                                        <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Adicionar ao carrinho</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="choose">
+                                <ul class="nav nav-pills nav-justified">
+                                    <li><a href=""><i class="fa fa-plus-square"></i>Adicionar à desejos</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="pagination">
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">&raquo;</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/Produtos/js/jquery.js"></script>
+    <script src="~/Produtos/js/price-range.js"></script>
+    <script src="~/Produtos/js/jquery.scrollUp.min.js"></script>
+    <script src="~/Produtos/js/prettyPhoto.js"></script>
+    <script src="~/Produtos/js/main.js"></script>
+}
+
+@section Styles {
+    <link href="~/Produtos/css/prettyPhoto.css" rel="stylesheet" />
+    <link href="~/Produtos/css/price-range.css" rel="stylesheet" />
+    <link href="~/Produtos/css/animate.css" rel="stylesheet" />
+    <link href="~/Produtos/css/main.css" rel="stylesheet" />
+    <link href="~/Produtos/css/responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Produtos/css/meu.css" />
+}
