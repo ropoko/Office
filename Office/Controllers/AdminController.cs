@@ -101,7 +101,15 @@ namespace Office.Controllers
 
         public IActionResult Reservas()
         {
-            var lista = _context.Pedidos.Include(p => p.Usuario).ToList();
+            var lista = _context.Pedidos.Include(p => p.Usuario).Include(p => p.ItemPedidos).ToList();
+
+            foreach (var item in lista)
+            {
+                foreach (var prod in item.ItemPedidos)
+                {
+                    prod.Produto = _context.Produtos.Find(prod.IDProduto);
+                }
+            }
 
             return View(lista);
         }

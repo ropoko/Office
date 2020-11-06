@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.DataBusca)
             </th>
+            <th>
+                Produto
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -35,6 +38,13 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.DataBusca)
+                </td>
+                <td>
+                    @foreach (var produto in item.ItemPedidos)
+                    {
+                        @produto.Produto.Nome
+                        <br />
+                    }
                 </td>
             </tr>
         }

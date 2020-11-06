@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -19,11 +20,15 @@ namespace Office.Models
         [Required]
         [Column("IDCliente")]
         public string IDCliente { get; set; }
+
+        [ForeignKey("IDCliente")]
         public Usuario Usuario { get; set; }
 
         [Display(Name = "Data da Busca")]
         [Required]
         [DataType(DataType.Date)]
         public DateTime DataBusca { get; set; }
+
+        public virtual List<ItemPedido> ItemPedidos { get; set; }
     }
 }
