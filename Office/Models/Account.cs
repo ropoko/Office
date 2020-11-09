@@ -20,20 +20,24 @@ namespace Office.Models
     public class UserRegistrationModel
     {
         [Required(ErrorMessage = "Informe o nome de usuário")]
+        [Display(Name = "Nome Completo")]
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "Informe seu E-mail")]
         [EmailAddress]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
         [Required(ErrorMessage = "É necessário uma senha")]
         [DataType(DataType.Password)]
         [StringLength(50, ErrorMessage = "Senha muito curta!", MinimumLength = 8)]
+        [Display(Name = "Senha")]
         public string Password { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "As senhas não coincidem!")]
+        [Display(Name = "Confirme sua senha")]
         public string ConfirmPassword { get; set; }
 
         [Display(Name = "Perfil de Acesso")]
@@ -60,6 +64,7 @@ namespace Office.Models
 
         [Required]
         [Column("DataCadastro")]
+        [DataType(DataType.Date)]
         public DateTime DataCadastro { get; set; }
     }
 }

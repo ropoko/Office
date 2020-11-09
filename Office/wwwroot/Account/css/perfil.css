@@ -1,0 +1,9 @@
+﻿main {
+    padding: inherit;
+    margin: inherit;
+}
+
+.container-perfil .title {
+    margin-top: 1rem;
+    text-align: center;
+}

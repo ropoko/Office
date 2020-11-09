@@ -35,6 +35,7 @@ namespace Office.Models
         [Required]
         [Display(Name = "Data do Cadastro")]
         [Column("DataCadastro")]
+        [DataType(DataType.Date)]
         public DateTime DataCadastro { get; set; }
 
         [NotMapped]

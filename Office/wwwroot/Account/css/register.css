@@ -1,0 +1,9 @@
+﻿main {
+    margin: inherit;
+    padding: inherit;
+}
+
+.container-register .title{
+    margin-top: 1rem;
+    text-align: center;
+}
