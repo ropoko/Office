@@ -1,16 +1,15 @@
 ﻿@model Office.Models.UserLoginModel
-@using Microsoft.AspNetCore.Authentication;
-@inject IAuthenticationSchemeProvider SchemeProvider;
 
 @{
     Layout = "_HeaderFooter";
     ViewData["Title"] = ViewBag.mensagem;
 }
 
-<h1>Faça seu login :D</h1>
+
 <div class="container">
-    <div class="row mt-10">
-        <div class="col-md-4">
+    <h2>Faça seu login</h2>
+    <div class="row">
+        <div class="col-md-6">
             <form asp-action="Login" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
@@ -24,23 +23,15 @@
                     <span asp-validation-for="Senha" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Login" class="btn btn-outline-success" />
+                    <input type="submit" value="Login" class="col-md-3 btn btn-outline-success" />
+                    <br />
+                    @Html.ActionLink("Não possui uma conta? Cadastre-se", "Register", "Account", null, null, null, null, new { @class = "col-md-7" })
                 </div>
             </form>
-            <div class="btn-group" role="group">
-                @foreach (var provider in await SchemeProvider.GetRequestHandlerSchemesAsync())
-                {
-                    <a class="btn btn-lg btn-default"
-                       asp-route-returnUrl="@Context.Request.Query["returnUrl"]"
-                       asp-route-provider="@provider.Name"
-                       asp-action="signin-facebook">
-                        <i class="fa fa-@provider.Name.ToLower()"></i> @provider.Name
-                    </a>
-                }
-            </div>
         </div>
     </div>
-    <div class="row">
-        @Html.ActionLink("Não possui uma conta? Cadastre-se", "Register", "Account", null, null, null, null, null)
-    </div>
 </div>
+
+@section Styles {
+    <link href="~/Account/css/main.css" rel="stylesheet" />
+}

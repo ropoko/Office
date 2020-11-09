@@ -1,9 +1,9 @@
-#MainNav{
-  position: fixed;
-  top:0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
+#MainNav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .dropbtn {
@@ -14,58 +14,28 @@
     border: none;
     cursor: pointer;
     border-radius: 10%;
-  }
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    list-style: none;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #b9b9b9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    list-style: none;
-  }
-  
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-
-  .dropbtn:hover {background-color: rgb(247, 101, 4); text-decoration: none;}
-
-  .dropdown-content a:hover {color: #1dff08;}
-
-  .dropdown:hover .dropdown-content {display: block;}
-
-#main{
-  padding: 0;
-  margin: 0;
+    transition: background-color 1s;
+    transition: font-weight 1s;
 }
 
-#DivSlide{
-  margin-bottom: 30px;
+.dropbtn:hover {
+    background-color: #2e3338;
+    font-weight: 400;
 }
 
-#title{
-  color:white;
+#main {
+    padding: 0;
+    margin: 0;
 }
 
-#imgSlide1, #imgSlide2, #imgSlide3{
-  width: 65vh;
-  height: 65vh;
+#imgSlide1, #imgSlide2, #imgSlide3 {
+    width: 65vh;
+    height: 65vh;
 }
 
-#card1, #card2, #card3, #card4{
-  height: auto;
-  margin-bottom: 1.5rem;
+#card1, #card2, #card3, #card4 {
+    height: auto;
+    margin-bottom: 1.5rem;
 }
 
 #CardBody1, #CardBody2, #CardBody3, #CardBody4 {
@@ -76,21 +46,22 @@
     overflow: hidden;
 }
 
-#CardImg{
-  width: 100%;
+#btnLogin, #btnCesta {
+    margin-right: 10px;
+    margin-bottom: 2px;
 }
 
-#btnLogin, #btnCesta{
-  margin-right: 10px;
-  margin-bottom: 2px;
+#CardImg {
+    width: 100%;
+    height: 338px;
 }
 
 .responsive {
-  width: 100%;
-  max-height: 338px;
+   width: 100%;
+   height: 100%;
 }
 
-@media(max-width: 720px){
+@media(max-width: 720px) {
     #card1, #card2, #card3, #card4 {
         height: auto;
         margin-bottom: 1.5rem;
@@ -105,11 +76,11 @@
     }
 
     #CardImg {
-        width: 45vh;
-        height: 45vh;
+        width: 100%;
     }
 
-    #imgCard{
-
+    #imgCard {
+        height: auto;
+        width: auto;
     }
 }

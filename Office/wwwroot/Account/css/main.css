@@ -1,0 +1,21 @@
+﻿.form-group + .form-group + .form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+}
+
+@media(max-width: 720px) {
+    .form-group + .form-group + .form-group a {
+        display: block;
+    }
+
+    h2 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
+}

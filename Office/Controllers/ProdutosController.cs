@@ -217,7 +217,7 @@ namespace Office.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Products()
+        public IActionResult Todos()
         {
             return View();
         }
