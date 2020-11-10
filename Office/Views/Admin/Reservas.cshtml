@@ -40,11 +40,15 @@
                     @Html.DisplayFor(modelItem => item.DataBusca)
                 </td>
                 <td>
-                    @foreach (var produto in item.ItemPedidos)
+                    @if (item.ItemPedidos[0].Produto != null)
                     {
-                        @produto.Produto.Nome
-                        <br />
+                        @foreach (var produto in item.ItemPedidos)
+                        {
+                            @produto.Produto.Nome
+                            <br />
+                        }
                     }
+
                 </td>
             </tr>
         }

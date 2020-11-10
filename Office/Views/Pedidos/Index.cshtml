@@ -5,59 +5,64 @@
     ViewData["Title"] = "Carrinho | Office Street";
 }
 
-<h1>Meus pedidos</h1>
+<div class="title">
+    <h1>Meus pedidos</h1>
+</div>
 
-@if (Model.Count() == 0 || Model == null)
-{
-    <h2>Voce não realizou nenhuma reserva</h2>
-}
-else
-{
-    <section id="cart_items">
-        <div class="container">
-            <div class="table-responsive cart_info">
-                <table class="table table-condensed">
-                    <thead>
-                        <tr class="cart_menu">
-                            <td class="image">Item</td>
-                            <td class="description">Descrição</td>
-                            <td class="price">Preço</td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
-                            <tr>
-                                <td class="cart_product">
-                                    @item.Nome
-                                </td>
-                                <td class="cart_description">
-                                    @item.Descricao
-                                </td>
-                                <td class="cart_price">
-                                    @item.Valor
-                                </td>
-                                <td>
-                                    <a data-toggle="collapse" href="#info">+</a>
-                                </td>
-                                <td class="cart_delete">
-                                    <a class="cart_quantity_delete" onclick="ExcluirPedido('@item.IDProduto')">
-                                        <i class="fa fa-times-circle"></i>
-                                    </a>
-                                </td>
+<div class="content">
+    @if (Model.Count() == 0 || Model == null)
+    {
+        <h2>Voce não realizou nenhuma reserva</h2>
+    }
+    else
+    {
+        <section id="cart_items">
+            <div class="container">
+                <div class="table-responsive cart_info">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr class="cart_menu">
+                                <td class="image">Item</td>
+                                <td class="description">Descrição</td>
+                                <td class="price">Preço</td>
                             </tr>
-                            <tr class="collapse" id="info">
-                                <td>
-                                    aaaaa
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="cart_product">
+                                        @item.Nome
+                                    </td>
+                                    <td class="cart_description">
+                                        @item.Descricao
+                                    </td>
+                                    <td class="cart_price">
+                                        @item.Valor
+                                    </td>
+                                    <td>
+                                        <a data-toggle="collapse" href="#info">+</a>
+                                    </td>
+                                    <td class="cart_delete">
+                                        <a class="cart_quantity_delete" onclick="ExcluirPedido('@item.IDProduto')">
+                                            <i class="fa fa-times-circle"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr class="collapse" id="info">
+                                    <td>
+                                        aaaaa
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section>
-}
+        </section>
+    }
+</div>
+
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
@@ -82,4 +87,8 @@ else
                 });
         }
     </script>
+}
+
+@section Styles {
+    <link href="~/Pedidos/css/main.css" rel="stylesheet" />
 }

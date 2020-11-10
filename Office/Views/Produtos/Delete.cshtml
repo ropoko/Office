@@ -1,7 +1,6 @@
 ﻿@model Office.Models.Produto
 
 @{
-    ViewData["Title"] = "Delete";
     Layout = "Admin/_LayoutAdmin";
 }
 
@@ -49,7 +48,7 @@
             <img src="@Url.Content(Model.Foto)" class="img-fluid" width="500" />
         </dd>
     </dl>
-    
+
     <form asp-action="Delete">
         <input type="hidden" asp-for="IDProduto" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
