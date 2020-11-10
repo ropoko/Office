@@ -1,7 +1,9 @@
 ﻿main.container-fluid .title {
     text-align: center;
+    margin-top: .8rem;
 }
 
 main.container-fluid .content {
-
+    text-align: center;
+    margin-top: 2rem;
 }
