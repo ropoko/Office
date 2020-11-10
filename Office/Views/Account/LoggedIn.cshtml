@@ -18,8 +18,9 @@
             }
             else
             {
-                <img src="@Url.Content(Model.Foto)" class="img-fluid" width="150" />
-                <input id="novaFoto" type="file" asp-for="Foto" accept=".jpg,.jpeg,.png,.pdf,.webm" />
+                <div class="container-foto">
+                    <img src="@Url.Content(Model.Foto)" class="img-fluid" />
+                </div>
             }
         </div>
         <div class="informacoes-perfil">
@@ -105,17 +106,6 @@
     if (primeiroAcesso == "OK") {
         $('#modalWelcomeMessage').modal("show");
     }
-    </script>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-
-            $("#novaFoto").on('click', function () {
-                document.getElementById('editarFoto').style.display = "block";
-                $('editarFoto').show();
-                return false;
-            });
-        });
     </script>
 }
 

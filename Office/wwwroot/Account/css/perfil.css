@@ -19,6 +19,16 @@
     justify-content: center;
 }
 
+.container-perfil .foto .container-foto {
+    width: 20rem;
+    max-width: 23rem;
+}
+
+.container-perfil .foto .container-foto img.img-fluid {
+    width: inherit;
+    height: inherit;
+}
+
 .container-perfil {
     margin-left: 3rem;
 }
@@ -48,6 +58,11 @@ form .btn-logout {
 
     .container-content input {
         margin-bottom: .5rem;
+    }
+
+    .container-perfil .foto .container-foto {
+        width: 8rem;
+        max-width: 10rem;
     }
 
     .container-perfil dt {
