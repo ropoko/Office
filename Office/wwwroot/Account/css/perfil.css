@@ -7,3 +7,55 @@
     margin-top: 1rem;
     text-align: center;
 }
+
+.container-content {
+    display: grid;
+    grid-template-areas: 'foto informacoes-perfil';
+}
+
+.container-perfil .foto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-perfil {
+    margin-left: 3rem;
+}
+
+.container-perfil dt {
+    margin-bottom: 5px;    
+}
+
+form {
+    text-align: center;
+}
+
+form .btn-logout {
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
+@media(max-width: 720px){
+    .container-perfil .title {
+        text-align: center;
+    }
+
+    .container-content {
+        display: grid;
+        grid-template-areas: 'foto' 'informacoes-perfil';
+    }
+
+    .container-content input {
+        margin-bottom: .5rem;
+    }
+
+    .container-perfil dt {
+        margin-bottom: 2px;
+    }
+
+    .container-perfil {
+        margin-left: 0;
+        text-align: center;
+    }
+}

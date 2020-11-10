@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Office.Models;
 using Office.Utils;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -92,11 +91,6 @@ namespace Office.Controllers
             await userManager.AddToRoleAsync(usu, userModel.Perfis);
 
             return RedirectToAction("Register", "Admin");
-        }
-
-        public IActionResult DashBoard()
-        {
-            return View();
         }
 
         public IActionResult Reservas()

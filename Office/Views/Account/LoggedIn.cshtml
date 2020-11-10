@@ -10,11 +10,11 @@
         <hr />
     </div>
 
-    <div class="col-md-12">
-        <div class="col-md-6 foto">
+    <div class="container-content">
+        <div class="foto">
             @if (Model.Foto == null)
             {
-                <input class="form-control" readonly value="Você ainda não possui uma foto!" />
+                <input class="col-md-8 text-center form-control" readonly value="Você ainda não possui uma foto!" />
             }
             else
             {
@@ -22,51 +22,45 @@
                 <input id="novaFoto" type="file" asp-for="Foto" accept=".jpg,.jpeg,.png,.pdf,.webm" />
             }
         </div>
-        <div class="col-md-6 informacoes-perfil">
-
+        <div class="informacoes-perfil">
+            <dl>
+                <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+                <dd>
+                    <input class="col-md-9 form-control" readonly value="@Html.DisplayFor(model => model.Nome)" />
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd>
+                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Email)" />
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cidade)
+                </dt>
+                <dd>
+                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Cidade)" />
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.Cpf)
+                </dt>
+                <dd>
+                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Cpf)" />
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataNascimento)
+                </dt>
+                <dd>
+                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.DataNascimento)" />
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.DataCadastro)
+                </dt>
+                <dd>
+                    <input class="col-md-9 form-control" readonly value="@Html.DisplayFor(model => model.DataCadastro)" />
+                </dd>
+            </dl>
         </div>
-        <dl>
-            <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
-            <dd>
-                <input class="form-control" readonly value="@Html.DisplayFor(model => model.Nome)" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-            <dd>
-                <input class="form-control" readonly value="@Html.DisplayFor(model => model.Email)" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Cidade)
-            </dt>
-            <dd>
-                <input class="form-control" readonly value="@Html.DisplayFor(model => model.Cidade)" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Cpf)
-            </dt>
-            <dd>
-                <input class="form-control" readonly value="@Html.DisplayFor(model => model.Cpf)" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.DataNascimento)
-            </dt>
-            <dd>
-                <input class="form-control" readonly value="@Html.DisplayFor(model => model.DataNascimento)" />
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.DataCadastro)
-            </dt>
-            <dd>
-                <input class="form-control" readonly value="@Html.DisplayFor(model => model.DataCadastro)" />
-            </dd>
-        </dl>
-
     </div>
-
-    <form asp-controller="Account" asp-action="Edit">
-        <button type="submit" class="btn btn-outline-danger" id="editarFoto" asp-route-id="@Model.Id" style="display:none;">Editar Foto</button>
-    </form>
 
     @* Modal mensagem bem-vindo e explicação reservas *@
     <div class="modal fade" id="modalWelcomeMessage" tabindex="-1" aria-hidden="true">
@@ -100,7 +94,7 @@
     @* ---------=----------- *@
 </div>
 <form asp-controller="Account" asp-action="Logout">
-    <button type="submit" class="btn btn-outline-dark">Sair</button>
+    <button type="submit" class="col-md-2 btn btn-outline-dark btn-logout">Sair</button>
 </form>
 
 @section Scripts {
