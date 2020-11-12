@@ -1,13 +1,19 @@
-﻿@model IEnumerable<Office.Models.Produto>
-
-@{
-    ViewData["Title"] = "Office Street | Produtos";
+﻿@{
     Layout = "_HeaderFooter";
 }
 
 <div class="container">
     <div class="row">
         <partial name="~/Views/Shared/Produtos/PartialMenu.cshtml" />
+        @*<div class="col-lg-3">
+            <h1 class="my-4">Categorias</h1>
+            <div class="list-group">
+                @foreach (var item in ViewBag.categorias)
+                {
+                    <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria" class="list-group-item">@item.Nome</a>
+                }
+            </div>
+        </div>*@
         <div class="col-lg-9">
             <div class="row">
                 @foreach (var item in Model)

@@ -223,6 +223,24 @@ namespace Office.Controllers
             return View(await _context.Produtos.ToListAsync());
         }
 
+        public IActionResult ProdutosCategoria(string id)
+        {
+            var listaProdutos = _context.Produtos.ToList();
+
+            var novaListaProdutos = new List<Produto>();
+
+            foreach (var item in listaProdutos)
+            {
+                if (item.Categoria.Equals(id))
+                {
+                    novaListaProdutos.Add(item);
+                }
+            }
+
+            ViewData["categorias"] = _context.Categorias.ToList();
+            return View(novaListaProdutos);
+        }
+
         private bool ProdutoExists(int id)
         {
             return _context.Produtos.Any(e => e.IDProduto == id);

@@ -1,0 +1,9 @@
+﻿<div class="col-lg-3">
+    <h1 class="my-4">Categorias</h1>
+    <div class="list-group">
+        @foreach (var item in ViewBag.categorias)
+        {
+            <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria" class="list-group-item">@item.Nome</a>
+        }
+    </div>
+</div>
