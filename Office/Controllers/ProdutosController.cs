@@ -217,9 +217,10 @@ namespace Office.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Todos()
+        public async Task<IActionResult> Todos()
         {
-            return View();
+            ViewData["categorias"] = _context.Categorias.ToList();
+            return View(await _context.Produtos.ToListAsync());
         }
 
         private bool ProdutoExists(int id)
