@@ -5,11 +5,9 @@
     Layout = "_HeaderFooter";
 }
 
-<h1>Details</h1>
+<h1>@Html.DisplayFor(model => model.Nome)</h1>
 
 <div>
-    <h4>Produto</h4>
-    <hr />
     <dl class="row">
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Nome)
@@ -81,4 +79,8 @@
                 });
         }
     </script>
+}
+
+@section Styles {
+    <link href="~/Produtos/css/details.css" rel="stylesheet" />
 }

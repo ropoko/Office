@@ -17,7 +17,7 @@
                             <img class="card-img-top" src="@Url.Content(item.Foto)" />
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">@item.Nome</a>
+                                    <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto">@item.Nome</a>
                                 </h4>
                                 <h5>R$@item.Valor</h5>
                                 <p class="card-text">@item.Descricao</p>
