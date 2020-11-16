@@ -3,9 +3,9 @@
     margin: inherit;
 }
 
-.container-perfil .title {
-    margin-top: 1rem;
-    text-align: center;
+main .container-content {
+    background: rgba(0,0,0, 0.4);
+    box-shadow: 0 0 1em black;
 }
 
 .container-content {
@@ -17,6 +17,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+}
+
+.container-perfil .informacoes-perfil dt, dd {
+    color: rgba(255, 255, 255,  1);
 }
 
 .container-perfil .foto .container-foto {
@@ -34,7 +39,7 @@
 }
 
 .container-perfil dt {
-    margin-bottom: 5px;    
+    margin-bottom: 5px;
 }
 
 form {

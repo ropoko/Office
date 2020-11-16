@@ -4,96 +4,95 @@
     Layout = "_HeaderFooter";
 }
 
-<div class="container-perfil">
-    <div class="title">
-        <h4>Sua conta</h4>
+<div class="container">
+    <div class="container-perfil">
         <hr />
-    </div>
-
-    <div class="container-content">
-        <div class="foto">
-            @if (Model.Foto == null)
-            {
-                <input class="col-md-8 text-center form-control" readonly value="Você ainda não possui uma foto!" />
-            }
-            else
-            {
-                <div class="container-foto">
-                    <img src="@Url.Content(Model.Foto)" class="img-fluid" />
-                </div>
-            }
+        <div class="container-content">
+            <div class="foto">
+                @if (Model.Foto == null)
+                {
+                    <input class="col-md-8 text-center form-control" readonly value="Você ainda não possui uma foto!" />
+                }
+                else
+                {
+                    <div class="container-foto">
+                        <img src="@Url.Content(Model.Foto)" class="img-fluid" />
+                    </div>
+                }
+            </div>
+            <div class="informacoes-perfil">
+                <dl>
+                    <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+                    <dd>
+                        <input class="col-md-9 form-control" readonly value="@Html.DisplayFor(model => model.Nome)" />
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </dt>
+                    <dd>
+                        <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Email)" />
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cidade)
+                    </dt>
+                    <dd>
+                        <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Cidade)" />
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Cpf)
+                    </dt>
+                    <dd>
+                        <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Cpf)" />
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataNascimento)
+                    </dt>
+                    <dd>
+                        <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.DataNascimento)" />
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.DataCadastro)
+                    </dt>
+                    <dd>
+                        <input class="col-md-9 form-control" readonly value="@Html.DisplayFor(model => model.DataCadastro)" />
+                    </dd>
+                </dl>
+            </div>
         </div>
-        <div class="informacoes-perfil">
-            <dl>
-                <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
-                <dd>
-                    <input class="col-md-9 form-control" readonly value="@Html.DisplayFor(model => model.Nome)" />
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Email)
-                </dt>
-                <dd>
-                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Email)" />
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cidade)
-                </dt>
-                <dd>
-                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Cidade)" />
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.Cpf)
-                </dt>
-                <dd>
-                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.Cpf)" />
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.DataNascimento)
-                </dt>
-                <dd>
-                    <input class="col-md-9  form-control" readonly value="@Html.DisplayFor(model => model.DataNascimento)" />
-                </dd>
-                <dt>
-                    @Html.DisplayNameFor(model => model.DataCadastro)
-                </dt>
-                <dd>
-                    <input class="col-md-9 form-control" readonly value="@Html.DisplayFor(model => model.DataCadastro)" />
-                </dd>
-            </dl>
-        </div>
-    </div>
 
-    @* Modal mensagem bem-vindo e explicação reservas *@
-    <div class="modal fade" id="modalWelcomeMessage" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Parabéns!!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p>Você acaba de criar sua conta, sinta-se à vontade para <a data-toggle="modal" data-target="#modalExplication"><strong>reservar</strong></a> seus produtos</p>
-                </div>
-                <div class="modal-body">
-                    <h5 class="modal-title">Entenda as reservas!</h5>
-                    <p>
-                        O sistema de reserva é um meio que possibilita à você, cliente, a opção de verificar a disponibilidade do produto e
-                        guarda-lo para poder busca-lo quando possível, porém dentro do prazo estipulado pela nossa loja - 48 horas. Com esse sistema
-                        você agiliza o processo de compra, evita de ir até a loja e correr o risco de ficar sem seu produto desejado, se encarregando apenas de
-                        buscar e pagar pelo produto na loja.
-                    </p>
-                </div>
+        @* Modal mensagem bem-vindo e explicação reservas *@
+        <div class="modal fade" id="modalWelcomeMessage" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Parabéns!!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Você acaba de criar sua conta, sinta-se à vontade para <a data-toggle="modal" data-target="#modalExplication"><strong>reservar</strong></a> seus produtos</p>
+                    </div>
+                    <div class="modal-body">
+                        <h5 class="modal-title">Entenda as reservas!</h5>
+                        <p>
+                            O sistema de reserva é um meio que possibilita à você, cliente, a opção de verificar a disponibilidade do produto e
+                            guarda-lo para poder busca-lo quando possível, porém dentro do prazo estipulado pela nossa loja - 48 horas. Com esse sistema
+                            você agiliza o processo de compra, evita de ir até a loja e correr o risco de ficar sem seu produto desejado, se encarregando apenas de
+                            buscar e pagar pelo produto na loja.
+                        </p>
+                    </div>
 
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
             </div>
         </div>
+        @* ---------=----------- *@
     </div>
-    @* ---------=----------- *@
 </div>
+
 <form asp-controller="Account" asp-action="Logout">
     <button type="submit" class="col-md-2 btn btn-outline-dark btn-logout">Sair</button>
 </form>

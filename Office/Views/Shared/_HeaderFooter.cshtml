@@ -15,8 +15,12 @@
 </head>
 <body>
     <header>
-        <nav id="MainNav" class="navbar navbar-expand-lg navbar-dark bg-dark">
-            @Html.ActionLink("Office Street", "Index", "Home", null, null, null, null, new { @class = "navbar-brand" })
+        <nav id="MainNav" class="navbar navbar-expand-lg navbar-dark">
+            <a asp-action="Index" asp-controller="Home" class="navbar-brand">
+                <img src="~/img/logo.png" alt="logo" id="nav-logo" />
+            </a>
+            
+            @*@Html.ActionLink("Office Street", "Index", "Home", null, null, null, null, new { @class = "navbar-brand" })*@
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -41,8 +45,8 @@
                         @Html.ActionLink(" ", "Login", "Account", null, null, null, null, new { @class = "btn btn-outline-primary fas fa-user", ID = "btnLogin" });
                     }
                     @Html.ActionLink(" ", "Index", "Pedidos", null, null, null, null, new { @class = "btn btn-outline-success fas fa-shopping-basket", ID = "btnCesta" })
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                    @*<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>*@
                 </form>
             </div>
         </nav>
@@ -54,8 +58,6 @@
     <footer class="border-top footer text-muted">
         <div class="container-fluid text-center">
             &copy; 2020 - Office Street
-            <a href="https://www.instagram.com/officestreet/?hl=pt-br" class="fab fa-instagram"></a>
-            <a href="https://pt-br.facebook.com/officestreetbb/" class="fab fa-facebook"></a>
         </div>
         <div>
 

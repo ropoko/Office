@@ -7,11 +7,13 @@
     int i = 0;
 }
 
-<div class="title">
-    <h1>Meus pedidos</h1>
-</div>
-
 <div class="content">
+    <div class="content-title col-md-12">
+        <div class="title">
+            <h2>Meus pedidos</h2>
+        </div>
+    </div>
+    
     @if (Model.Count() == 0 || Model == null)
     {
         <h2>Voce não realizou nenhuma reserva :(</h2>
