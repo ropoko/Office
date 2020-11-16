@@ -94,8 +94,9 @@
 </div>
 
 <form asp-controller="Account" asp-action="Logout">
-    <button type="submit" class="col-md-2 btn btn-outline-dark btn-logout">Sair</button>
+    <button type="submit" class="col-md-2 btn btn-logout">Sair</button>
 </form>
+
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}

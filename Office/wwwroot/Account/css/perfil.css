@@ -49,6 +49,8 @@ form {
 form .btn-logout {
     margin-top: 1rem;
     margin-bottom: .5rem;
+    background-color: black;
+    color: white;
 }
 
 @media(max-width: 720px){
