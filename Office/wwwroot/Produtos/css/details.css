@@ -1,1 +1,26 @@
-﻿
+﻿.spad {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.primary-btn {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 14px 30px;
+    color: #ffffff;
+    background: #f08632;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+product-img {
+    min-width: 100%;
+    width: 30rem;
+}
+
+/*product-img img.img-fluid {
+    max-width: 30rem;
+    min-width: 30rem;
+}*/

@@ -5,54 +5,34 @@
     Layout = "_HeaderFooter";
 }
 
-<h1>@Html.DisplayFor(model => model.Nome)</h1>
-
-<div>
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Valor)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Valor)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Marca)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Marca)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Categoria)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-        <dd class="col-sm-10">
-            <img src="@(System.IO.File.Exists(ViewData["CaminhoFoto"] + Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/img/sem_foto.png"))" class="img-fluid" width="500" />
-        </dd>
-        <dt>
-            Faça sua reserva -->
-        </dt>
-        <dd>
-            <a onclick="Reservar('@Model.IDProduto')">Reservar</a>
-        </dd>
-    </dl>
-</div>
+<section class="product-details spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="product-img">
+                    <img src="@(System.IO.File.Exists(ViewData["CaminhoFoto"] + Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/img/sem_foto.png"))" class="img-fluid" width="500" />
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product__details__text">
+                    <h4>@Html.DisplayFor(model => model.Nome)</h4>
+                    <h5>R$ @Html.DisplayFor(model => model.Valor)</h5>
+                    <hr />
+                    <p>
+                        @Html.DisplayFor(model => model.Descricao)
+                    </p>
+                    <ul>
+                        <li>Marca: <span>@Html.DisplayFor(model => model.Marca)</span></li>
+                        <li>Categoria: <span>@Html.DisplayFor(model => model.Categoria)</span></li>
+                    </ul>
+                    <div class="product__details__option">
+                        <a onclick="Reservar('@Model.IDProduto')" class="primary-btn">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @section Scripts {
     @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}

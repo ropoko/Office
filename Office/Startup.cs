@@ -60,12 +60,6 @@ namespace Office
 
             }).AddEntityFrameworkStores<Contexto>().AddDefaultTokenProviders();
 
-            services.AddAuthentication().AddFacebook(op =>
-            {
-                op.AppId = Configuration["Authentication:Facebook:AppId"];
-                op.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
-            });
-
             services.AddAutoMapper(typeof(Startup));
         }
 
