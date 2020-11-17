@@ -4,9 +4,37 @@
     align-items: center;
 }
 
+.form-group + .form-group + .form-group a {
+    color: white;
+    padding: 2px;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5%;
+}
+
 h2 {
     margin-top: 6rem;
     margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    display: inline-flex;
+    background: rgba(0, 0, 0, .3);
+    text-shadow: 2px 2px 2px black;
+    box-shadow: 0 0 1em black;
+    padding: 5px 1rem;
+}
+
+input.form-control {
+    border: 1px solid black;
+    box-shadow: 0 0 .6em black;
+}
+
+.btn-login {
+    background: orange;
+    border-radius: 10%;
+    border: none;
 }
 
 @media(max-width: 720px) {

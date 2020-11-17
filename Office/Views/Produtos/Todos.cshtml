@@ -5,30 +5,65 @@
     Layout = "_HeaderFooter";
 }
 
-<div class="container">
-    <div class="row">
-        <partial name="~/Views/Shared/Produtos/PartialMenu.cshtml" />
-        <div class="col-lg-9">
-            <div class="row">
-                @foreach (var item in Model)
+<div class="circle-button" onclick="overlay()">&#9776;</div>
+<div class="container col-md-12">
+    @* Overlay *@
+    <div class="overlay" id="overlay-nav">
+        <div class="overlay-content">
+            <h3>Categorias</h3>
+            <hr />
+            <ul class="nav flex-column">
+                @foreach (var item in ViewBag.categorias)
                 {
-                    <div class="col-lg-4 col-md-6 mb-4 card-produto">
-                        <div class="card h-100">
-                            <img class="card-img-top" src="@Url.Content(item.Foto)" />
-                            <div class="card-body">
-                                <h4 class="card-title">
-                                    <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto">@item.Nome</a>
-                                </h4>
-                                <h5>R$@item.Valor</h5>
-                                <p class="card-text">@item.Descricao</p>
+                    <li class="category">
+                        <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria">@item.Nome</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    <partial name="~/Views/Shared/Produtos/PartialMenu.cshtml" />
+    <div class="row">
+        <div class="products">
+            <div class="col-md-9">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-3 col-md-4 mb-4 card-produto">
+                            <div class="card h-auto card-img-top">
+                                <div class="card-img">
+                                    <img src="@Url.Content(item.Foto)" />
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto">@item.Nome</a>
+                                    </h4>
+                                    <h5>R$@item.Valor</h5>
+                                    <p class="card-text">@item.Descricao</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+@section scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        function overlay() {
+            over = document.getElementById("overlay-nav");
+            if (over.style.width == "100%") {
+                over.style.width = "0%"
+            }
+            else {
+                over.style.width = "100%"   
+            }
+        }
+    </script>
+}
 
 @section styles {
     <link href="~/Produtos/css/main.css" rel="stylesheet" />

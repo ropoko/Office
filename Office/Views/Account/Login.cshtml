@@ -13,17 +13,17 @@
             <form asp-action="Login" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="Email" class="control-label"></label>
-                    <input asp-for="Email" class="form-control" />
+                    @*<label asp-for="Email" class="control-label"></label>*@
+                    <input asp-for="Email" placeholder="E-mail" class="form-control" />
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <label asp-for="Senha" class="control-label"></label>
-                    <input asp-for="Senha" class="form-control" />
+                    @*<label asp-for="Senha" class="control-label"></label>*@
+                    <input asp-for="Senha" placeholder="Senha" class="form-control" />
                     <span asp-validation-for="Senha" class="text-danger"></span>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Login" class="col-md-3 btn btn-outline-success" />
+                    <input type="submit" value="Login" class="col-md-3 btn btn-danger btn-login" />
                     <br />
                     @Html.ActionLink("Não possui uma conta? Cadastre-se", "Register", "Account", null, null, null, null, new { @class = "col-md-7" })
                 </div>

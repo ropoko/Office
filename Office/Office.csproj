@@ -22,9 +22,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\img\usuarios\" />
-    <Folder Include="wwwroot\img\produtos\" />
-    <Folder Include="wwwroot\img\produtos\" />
-    <Folder Include="wwwroot\img\produtos\" />
   </ItemGroup>
 
   <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
