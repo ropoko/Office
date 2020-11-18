@@ -7,3 +7,47 @@
     margin-top: 1rem;
     text-align: center;
 }
+
+.container-register .title h1 {
+    padding: 5px;
+    background: black;
+    display: inline-flex;
+    color: white;
+    border-radius: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-register .form input, select.form-control{
+    border: 1px solid black;
+}
+
+.container-register .form input:active, select.form-control:active {
+    border: 1px solid black;
+    box-shadow: 0 0 .7em orange;
+}
+
+.container-register .form label {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 700;
+    display: inline-flex;
+    background: rgba(0, 0, 0, .3);
+    text-shadow: 2px 2px 2px black;
+    box-shadow: 0 0 1em black;
+    padding: 5px 1rem;
+}
+
+.form + .form + .form + .form .form-group input[type=file] {
+    color: white;
+    border: none;
+    background: black;
+    padding: 3px;
+}
+
+.btn-cadastrar {
+    background: orange;
+    border-radius: 5%;
+    border: 1.5px solid black;
+    font-weight: bold;
+    text-shadow: .7px .7px .7px black;
+}

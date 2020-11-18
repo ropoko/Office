@@ -8,31 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/Home/css/site.css" />
-    <link rel="stylesheet" href="~/Home/css/meucss.css" />
+    <link rel="stylesheet" href="~/Layout/css/main.css" />
     <link rel="stylesheet" href="~/FontAwesome/css/all.css" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
     <header>
-        <nav id="MainNav" class="navbar navbar-expand-lg navbar-dark">
+        <nav class="navbar navbar-expand-lg menu">
             <a asp-action="Index" asp-controller="Home" class="navbar-brand">
-                <img src="~/img/logo.png" alt="logo" id="nav-logo" />
+                <img src="~/img/logo.png" alt="logo" class="menu-logo" />
             </a>
-            
-            @*@Html.ActionLink("Office Street", "Index", "Home", null, null, null, null, new { @class = "navbar-brand" })*@
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        @Html.ActionLink("Ver Produtos", "Todos", "Produtos", null, null, null, null, new { @class = "nav-link dropbtn" })
+                    <li class="nav-item">
+                        @Html.ActionLink("Ver Produtos", "Todos", "Produtos", null, null, null, null, new { @class = "nav-link menu-button" })
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="https://www.instagram.com/officestreet/?hl=pt-br" class="nav-link dropbtn">Galeria</a>
+                    <li class="nav-item">
+                        <a href="https://www.instagram.com/officestreet/?hl=pt-br" class="nav-link menu-button">Galeria</a>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -45,14 +42,13 @@
                         @Html.ActionLink(" ", "Login", "Account", null, null, null, null, new { @class = "btn btn-outline-primary fas fa-user", ID = "btnLogin" });
                     }
                     @Html.ActionLink(" ", "Index", "Pedidos", null, null, null, null, new { @class = "btn btn-outline-success fas fa-shopping-basket", ID = "btnCesta" })
-                    @*<input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>*@
                 </form>
             </div>
         </nav>
     </header>
-    <br /><br /><br />
-    <main id="main" class="container-fluid" role="main">
+    <br />
+    <br /><br />
+    <main class="container-fluid" role="main">
         @RenderBody()
     </main>
     <footer class="border-top footer text-muted">

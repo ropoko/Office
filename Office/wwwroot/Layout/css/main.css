@@ -1,0 +1,40 @@
+﻿body {
+    background-image: url(../../img/background2.jpg);
+}
+
+main {
+    padding: 0;
+    margin: 0;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.menu-logo{
+    width: 6rem;
+}
+
+.menu-button {
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 1s;
+    transition: font-weight 1s;
+    background-color: transparent;
+}
+
+.menu-button:hover {
+    color: white;
+    text-shadow: 0 0 .5em white;
+}
+
+footer {
+    background-color: black;
+}

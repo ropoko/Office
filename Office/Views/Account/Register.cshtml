@@ -16,8 +16,8 @@
     <form asp-action="Register" enctype="multipart/form-data">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row form">
+            <div class="col-md-6 col-sm-6 col-lg-6">
                 <div class="form-group">
                     <label asp-for="Nome" class="control-label"></label>
                     <input asp-for="Nome" class="form-control" />
@@ -25,7 +25,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6 col-lg-6">
                 <div class="form-group">
                     <label asp-for="Cidade" class="control-label"></label>
                     <select asp-for="Cidade" class="form-control" name="Cidade">
@@ -37,8 +37,8 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row form">
+            <div class="col-md-6 col-sm-6 col-lg-6">
                 <div class="form-group">
                     <label asp-for="DataNascimento" class="control-label"></label>
                     <input asp-for="DataNascimento" class="form-control" />
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6 col-lg-6">
                 <div class="form-group">
                     <label asp-for="Email" class="control-label"></label>
                     <input asp-for="Email" class="form-control" />
@@ -55,15 +55,15 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row form">
+            <div class="col-md-6 col-sm-6 col-lg-6">
                 <div class="form-group">
                     <label asp-for="Password" class="control-label"></label>
                     <input asp-for="Password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6 col-lg-6">
                 <div class="form-group">
                     <label asp-for="ConfirmPassword" class="control-label"></label>
                     <input asp-for="ConfirmPassword" class="form-control" />
@@ -72,25 +72,25 @@
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-3">
+        <div class="row form">
+            <div class="col-md-3 col-sm-3 col-lg-3">
                 <div class="form-group">
                     <label asp-for="Cpf" class="control-label"></label>
                     <input asp-for="Cpf" class="form-control" />
                     <span asp-validation-for="Cpf" class="text-danger"></span>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4 col-lg-4">
                 <div class="form-group">
                     <label asp-for="Foto" class="control-label"></label>
                     <input type="file" asp-for="Foto" class="form-control-file" accept=".jpg,.jpeg,.png,.pdf,.webm" />
                     <span asp-validation-for="Foto" class="text-danger"></span>
-                    <img src="" class="img-fluid" id="PreviewFoto" width="500" />
+                    <img src="" class="img-fluid" id="PreviewFoto" width="150" />
                 </div>
             </div>
         </div>
         <div class="form-group text-center">
-            <input value="Cadastrar" type="submit" class="btn btn-success col-md-3" />
+            <input value="Cadastrar" type="submit" class="btn-cadastrar btn btn-danger col-md-3" />
         </div>
     </form>
 </div>
