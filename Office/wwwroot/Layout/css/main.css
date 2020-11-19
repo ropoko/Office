@@ -35,6 +35,15 @@ main {
     text-shadow: 0 0 .5em white;
 }
 
+#btnCesta {
+    margin-left: 12px;
+    margin-right: 10px;
+}
+
 footer {
     background-color: black;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }

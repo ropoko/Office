@@ -196,6 +196,8 @@ namespace Office.Controllers
                 return NotFound();
             }
 
+
+
             return View(produto);
         }
 
@@ -208,8 +210,11 @@ namespace Office.Controllers
             var produto = await _context.Produtos.FindAsync(id);
 
             // Delete img from wwwroot
-            string imgProd = Environment.CurrentDirectory + "\\wwwroot\\" + produto.Foto;
-            System.IO.File.Delete(imgProd);
+            if (produto.Foto != null)
+            {
+                string imgProd = Environment.CurrentDirectory + "\\wwwroot\\" + produto.Foto;
+                System.IO.File.Delete(imgProd);
+            }
 
             _context.Produtos.Remove(produto);
             await _context.SaveChangesAsync();

@@ -6,3 +6,13 @@
     width: 100%;
     height: 100%;
 }
+
+.botao-visualizar {
+    background-color: black; 
+    color: white;
+}
+
+.botao-visualizar:hover {
+    font-weight: 500;
+    color: whitesmoke;
+}
