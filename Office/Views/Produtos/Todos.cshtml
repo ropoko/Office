@@ -1,9 +1,7 @@
 ﻿@model IEnumerable<Office.Models.Produto>
 
-@{
-    ViewData["Title"] = "Office Street | Produtos";
-    Layout = "_HeaderFooter";
-}
+@{ ViewData["Title"] = "Office Street | Produtos";
+    Layout = "_HeaderFooter"; }
 
 <div class="circle-button" onclick="overlay()">&#9776;</div>
 <div class="container col-md-12">
@@ -15,35 +13,40 @@
             <ul class="nav flex-column">
                 @foreach (var item in ViewBag.categorias)
                 {
-                    <li class="category">
-                        <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria">@item.Nome</a>
-                    </li>
-                }
+    <li class="category">
+        <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria">@item.Nome</a>
+    </li>}
             </ul>
         </div>
     </div>
-    <partial name="~/Views/Shared/Produtos/PartialMenu.cshtml" />
     <div class="row">
+        <div class="col-lg-3 categorias">
+            <h1 class="my-4">Categorias</h1>
+            <div class="list-group">
+                @foreach (var item in ViewBag.categorias)
+                {
+    <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria" class="list-group-item">@item.Nome</a>}
+            </div>
+        </div>
         <div class="products">
             <div class="col-md-9">
                 <div class="row">
                     @foreach (var item in Model)
                     {
-                        <div class="col-lg-3 col-md-4 mb-4 card-produto">
-                            <div class="card h-auto card-img-top">
-                                <div class="card-img">
-                                    <img src="@Url.Content(item.Foto)" />
-                                </div>
-                                <div class="card-body">
-                                    <h4 class="card-title">
-                                        <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto">@item.Nome</a>
-                                    </h4>
-                                    <h5>R$@item.Valor</h5>
-                                    <p class="card-text">@item.Descricao</p>
-                                </div>
-                            </div>
-                        </div>
-                    }
+        <div class="col-lg-3 col-md-4 mb-4 card-produto">
+            <div class="card h-auto card-img-top">
+                <div class="card-img">
+                    <img src="@Url.Content(item.Foto)" />
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">
+                        <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto">@item.Nome</a>
+                    </h4>
+                    <h5>R$ @item.Valor.ToString().Substring(0, 5)</h5>
+                    <p class="card-text">@item.Descricao</p>
+                </div>
+            </div>
+        </div>}
                 </div>
             </div>
         </div>
@@ -59,7 +62,7 @@
                 over.style.width = "0%"
             }
             else {
-                over.style.width = "100%"   
+                over.style.width = "100%"
             }
         }
     </script>

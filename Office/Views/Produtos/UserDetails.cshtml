@@ -5,7 +5,7 @@
     Layout = "_HeaderFooter";
 }
 
-<section class="product-details spad">
+<section class="product-details">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -13,11 +13,9 @@
                     <img src="@(System.IO.File.Exists(ViewData["CaminhoFoto"] + Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/img/sem_foto.png"))" class="img-fluid" width="500" />
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="product__details__text">
+            <div class="col--6">
+                <div class="product-info">
                     <h4>@Html.DisplayFor(model => model.Nome)</h4>
-                    <h5>R$ @Html.DisplayFor(model => model.Valor)</h5>
-                    <hr />
                     <p>
                         @Html.DisplayFor(model => model.Descricao)
                     </p>
@@ -25,6 +23,7 @@
                         <li>Marca: <span>@Html.DisplayFor(model => model.Marca)</span></li>
                         <li>Categoria: <span>@Html.DisplayFor(model => model.Categoria)</span></li>
                     </ul>
+                    <h5>R$ @Html.DisplayFor(model => model.Valor)</h5>
                     <div class="product__details__option">
                         <a onclick="Reservar('@Model.IDProduto')" class="primary-btn">Reservar</a>
                     </div>

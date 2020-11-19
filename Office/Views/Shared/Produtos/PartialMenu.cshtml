@@ -1,6 +1,14 @@
 ﻿<div class="container-fluid">
     <div class="row">
         <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+            <ul class="nav flex-column">
+                @foreach (var item in ViewBag.categorias)
+                {
+                    <li class="nav-item category">
+                        <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria">@item.Nome</a>
+                    </li>
+                }
+            </ul>
         </nav>
     </div>
 </div>
