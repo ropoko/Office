@@ -41,7 +41,7 @@
                 </td>
                 <td>
                     @if (item.ItemPedidos[0].Produto != null)
-                    {
+                    [[{
                         @foreach (var produto in item.ItemPedidos)
                         {
                             @produto.Produto.Nome

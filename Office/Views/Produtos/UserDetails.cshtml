@@ -1,8 +1,10 @@
 ﻿@model Office.Models.Produto
 
-@{
-    ViewData["Title"] = "Details";
-    Layout = "_HeaderFooter";
+@{ ViewData["Title"] = "Details";
+                Layout = "_HeaderFooter"; }
+
+@section Styles {
+    <link href="~/Produtos/css/details.css" rel="stylesheet" />
 }
 
 <section class="product-details">
@@ -12,20 +14,20 @@
                 <div class="product-img">
                     <img src="@(System.IO.File.Exists(ViewData["CaminhoFoto"] + Model.Foto) ? Url.Content(Model.Foto) : Url.Content("~/img/sem_foto.png"))" class="img-fluid" width="500" />
                 </div>
-            </div>
+            </div>                  
             <div class="col--6">
                 <div class="product-info">
                     <h4>@Html.DisplayFor(model => model.Nome)</h4>
                     <p>
                         @Html.DisplayFor(model => model.Descricao)
                     </p>
-                    <ul>
-                        <li>Marca: <span>@Html.DisplayFor(model => model.Marca)</span></li>
-                        <li>Categoria: <span>@Html.DisplayFor(model => model.Categoria)</span></li>
+                    <ul>                      
+                            <li>Marca: <span>@Html.DisplayFor(model => model.Marca)</span></li>
+                            <li>Categoria: <span>@Html.DisplayFor(model => model.Categoria)</span></li>
                     </ul>
-                    <h5>R$ @Html.DisplayFor(model => model.Valor)</h5>
+                            <h5>R$ @Html.DisplayFor(model => model.Valor)</h5>
                     <div class="product__details__option">
-                        <a onclick="Reservar('@Model.IDProduto')" class="primary-btn">Reservar</a>
+                       <a onclick="Reservar('@Model.IDProduto')" class="primary-btn">Reservar</a>
                     </div>
                 </div>
             </div>
@@ -60,6 +62,3 @@
     </script>
 }
 
-@section Styles {
-    <link href="~/Produtos/css/details.css" rel="stylesheet" />
-}

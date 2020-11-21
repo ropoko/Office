@@ -46,15 +46,15 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3d3b376c-1a15-4a3c-92f3-390096e5ae30",
-                            ConcurrencyStamp = "266274fe-aa30-40a8-b381-5cf6cbba5e03",
+                            Id = "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2",
+                            ConcurrencyStamp = "56bd430c-673f-483a-b258-045fb676746a",
                             Name = "ADMIN",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "34b47645-42e1-43a2-af78-6e697a82786b",
-                            ConcurrencyStamp = "c2ceb91d-bf7b-401b-bd28-99364107284f",
+                            Id = "62e0c296-4d02-4230-aeec-d40afceeb788",
+                            ConcurrencyStamp = "d74fe107-6aee-4a3f-95be-e44521a09734",
                             Name = "VISITANTE",
                             NormalizedName = "VISITANTE"
                         });
@@ -154,8 +154,8 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "3d3b376c-1a15-4a3c-92f3-390096e5ae30",
-                            RoleId = "3d3b376c-1a15-4a3c-92f3-390096e5ae30"
+                            UserId = "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2",
+                            RoleId = "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2"
                         });
                 });
 
@@ -212,17 +212,11 @@ namespace Office.Migrations
                     b.Property<int>("IDProduto")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PedidoIDPedido")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("ProdutoIDProduto")
-                        .HasColumnType("int");
-
                     b.HasKey("IDItemPedido");
 
-                    b.HasIndex("PedidoIDPedido");
+                    b.HasIndex("IDPedido");
 
-                    b.HasIndex("ProdutoIDProduto");
+                    b.HasIndex("IDProduto");
 
                     b.ToTable("Item_Pedido");
                 });
@@ -242,14 +236,11 @@ namespace Office.Migrations
                     b.Property<string>("IDCliente")
                         .IsRequired()
                         .HasColumnName("IDCliente")
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("UsuarioId")
                         .HasColumnType("varchar(85) CHARACTER SET utf8mb4");
 
                     b.HasKey("IDPedido");
 
-                    b.HasIndex("UsuarioId");
+                    b.HasIndex("IDCliente");
 
                     b.ToTable("Pedido");
                 });
@@ -387,10 +378,10 @@ namespace Office.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3d3b376c-1a15-4a3c-92f3-390096e5ae30",
+                            Id = "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2",
                             AccessFailedCount = 0,
                             Cidade = "Barra Bonita",
-                            ConcurrencyStamp = "236391b7-7d94-4e1f-ae5a-e39ca5f61d79",
+                            ConcurrencyStamp = "09a08938-6ea3-4647-9f30-03b1c5a9504c",
                             Cpf = "394.936.298-30",
                             DataCadastro = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DataNascimento = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
@@ -400,9 +391,9 @@ namespace Office.Migrations
                             Nome = "ADMIN",
                             NormalizedEmail = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
                             NormalizedUserName = "RODRIGOSTRAMANTINOLI@GMAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEP6nt44dljuC/ifg+r+6VEbLQL7lstGxMhFfrXoFTr23CjvEtOxsq84UwwQOUyBj1w==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEItViw1BTJSRlFaSL1OCZ/M79tM8uzV5uSejks/CQel8o89Txl7ZI7QTO3uGYaWGyw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "40893240",
+                            SecurityStamp = "14836356",
                             TwoFactorEnabled = false,
                             UserName = "rodrigostramantinoli@gmail.com"
                         });
@@ -462,19 +453,25 @@ namespace Office.Migrations
             modelBuilder.Entity("Office.Models.ItemPedido", b =>
                 {
                     b.HasOne("Office.Models.Pedido", "Pedido")
-                        .WithMany()
-                        .HasForeignKey("PedidoIDPedido");
+                        .WithMany("ItemPedidos")
+                        .HasForeignKey("IDPedido")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Office.Models.Produto", "Produto")
                         .WithMany()
-                        .HasForeignKey("ProdutoIDProduto");
+                        .HasForeignKey("IDProduto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Office.Models.Pedido", b =>
                 {
                     b.HasOne("Office.Models.Usuario", "Usuario")
                         .WithMany()
-                        .HasForeignKey("UsuarioId");
+                        .HasForeignKey("IDCliente")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Office.Models.Produto", b =>

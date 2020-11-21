@@ -181,18 +181,17 @@ namespace Office.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     DataPedido = table.Column<DateTime>(nullable: false),
                     IDCliente = table.Column<string>(nullable: false),
-                    UsuarioId = table.Column<string>(nullable: true),
                     DataBusca = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pedido", x => x.IDPedido);
                     table.ForeignKey(
-                        name: "FK_Pedido_AspNetUsers_UsuarioId",
-                        column: x => x.UsuarioId,
+                        name: "FK_Pedido_AspNetUsers_IDCliente",
+                        column: x => x.IDCliente,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -227,46 +226,44 @@ namespace Office.Migrations
                     IDItemPedido = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     IDProduto = table.Column<int>(nullable: false),
-                    ProdutoIDProduto = table.Column<int>(nullable: true),
-                    IDPedido = table.Column<int>(nullable: false),
-                    PedidoIDPedido = table.Column<int>(nullable: true)
+                    IDPedido = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Item_Pedido", x => x.IDItemPedido);
                     table.ForeignKey(
-                        name: "FK_Item_Pedido_Pedido_PedidoIDPedido",
-                        column: x => x.PedidoIDPedido,
+                        name: "FK_Item_Pedido_Pedido_IDPedido",
+                        column: x => x.IDPedido,
                         principalTable: "Pedido",
                         principalColumn: "IDPedido",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Item_Pedido_Produto_ProdutoIDProduto",
-                        column: x => x.ProdutoIDProduto,
+                        name: "FK_Item_Pedido_Produto_IDProduto",
+                        column: x => x.IDProduto,
                         principalTable: "Produto",
                         principalColumn: "IDProduto",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "3d3b376c-1a15-4a3c-92f3-390096e5ae30", "266274fe-aa30-40a8-b381-5cf6cbba5e03", "ADMIN", "ADMIN" });
+                values: new object[] { "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2", "56bd430c-673f-483a-b258-045fb676746a", "ADMIN", "ADMIN" });
 
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[] { "34b47645-42e1-43a2-af78-6e697a82786b", "c2ceb91d-bf7b-401b-bd28-99364107284f", "VISITANTE", "VISITANTE" });
+                values: new object[] { "62e0c296-4d02-4230-aeec-d40afceeb788", "d74fe107-6aee-4a3f-95be-e44521a09734", "VISITANTE", "VISITANTE" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "Cidade", "ConcurrencyStamp", "Cpf", "DataCadastro", "DataNascimento", "Email", "EmailConfirmed", "Foto", "LockoutEnabled", "LockoutEnd", "Nome", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3d3b376c-1a15-4a3c-92f3-390096e5ae30", 0, "Barra Bonita", "236391b7-7d94-4e1f-ae5a-e39ca5f61d79", "394.936.298-30", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "rodrigostramantinoli@gmail.com", true, null, false, null, "ADMIN", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "AQAAAAEAACcQAAAAEP6nt44dljuC/ifg+r+6VEbLQL7lstGxMhFfrXoFTr23CjvEtOxsq84UwwQOUyBj1w==", null, false, "40893240", false, "rodrigostramantinoli@gmail.com" });
+                values: new object[] { "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2", 0, "Barra Bonita", "09a08938-6ea3-4647-9f30-03b1c5a9504c", "394.936.298-30", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "rodrigostramantinoli@gmail.com", true, null, false, null, "ADMIN", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "RODRIGOSTRAMANTINOLI@GMAIL.COM", "AQAAAAEAACcQAAAAEItViw1BTJSRlFaSL1OCZ/M79tM8uzV5uSejks/CQel8o89Txl7ZI7QTO3uGYaWGyw==", null, false, "14836356", false, "rodrigostramantinoli@gmail.com" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",
                 columns: new[] { "UserId", "RoleId" },
-                values: new object[] { "3d3b376c-1a15-4a3c-92f3-390096e5ae30", "3d3b376c-1a15-4a3c-92f3-390096e5ae30" });
+                values: new object[] { "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2", "5298cc49-9d98-4f74-b939-0f9f7a4cc8d2" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
@@ -306,19 +303,19 @@ namespace Office.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Item_Pedido_PedidoIDPedido",
+                name: "IX_Item_Pedido_IDPedido",
                 table: "Item_Pedido",
-                column: "PedidoIDPedido");
+                column: "IDPedido");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Item_Pedido_ProdutoIDProduto",
+                name: "IX_Item_Pedido_IDProduto",
                 table: "Item_Pedido",
-                column: "ProdutoIDProduto");
+                column: "IDProduto");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pedido_UsuarioId",
+                name: "IX_Pedido_IDCliente",
                 table: "Pedido",
-                column: "UsuarioId");
+                column: "IDCliente");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Produto_CategoriasIDCategoria",
