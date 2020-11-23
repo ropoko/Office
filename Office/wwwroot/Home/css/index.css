@@ -7,6 +7,13 @@
     height: 100%;
 }
 
+.card-top {
+    height: 337px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .botao-visualizar {
     background-color: black; 
     color: white;

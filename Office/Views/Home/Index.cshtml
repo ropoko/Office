@@ -54,19 +54,12 @@
                     <div class="col-sm-3">
                         <div class="card mb-3 shadow-sm d-inline-flex">
                             <div class="card-top">
-                                <img src="@Url.Content(item.Foto)" class="card-img-top" />
+                                <img src="@Url.Content(item.Foto)" class="card-img-top img-card" />
                             </div>
                             <div class="card-body">
                                 <p class="card-text">@Html.DisplayFor(modelItem => item.Descricao)</p>
                             </div>
-                            @if (User.IsInRole("ADMIN"))
-                            {
-                                <a asp-action="AdmDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto" class="btn btn-sm botao-visualizar"> Visualizar </a>
-                            }
-                            else
-                            {
-                                <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto" class="btn btn-sm botao-visualizar"> Visualizar </a>
-                            }
+                            <a asp-action="UserDetails" asp-controller="Produtos" asp-route-id="@item.IDProduto" class="btn btn-sm botao-visualizar"> Visualizar </a>
                         </div>
                     </div>
                 }
