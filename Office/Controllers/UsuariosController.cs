@@ -1,10 +1,12 @@
 ﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Office.Controllers
 {
+    [Authorize(Roles = "ADMIN")]
     public class UsuariosController : Controller
     {
         private readonly Contexto _context;

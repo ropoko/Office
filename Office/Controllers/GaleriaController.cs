@@ -9,9 +9,6 @@ namespace Office.Controllers
     [AllowAnonymous]
     public class GaleriaController : Controller
     {
-        //private readonly UserManager<Usuario> userManager;
-        //private readonly SignInManager<Usuario> signInManager;
- 
         public IActionResult Index()
         {
             return View();
