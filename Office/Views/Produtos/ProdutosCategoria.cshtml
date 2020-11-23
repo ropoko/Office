@@ -4,8 +4,26 @@
     Layout = "_HeaderFooter";
 }
 
+<div class="circle-button" onclick="overlay()">&#9776;</div>
 <div class="container">
     <div class="row">
+
+        @* Overlay *@
+        <div class="overlay" id="overlay-nav">
+            <div class="overlay-content">
+                <h3>Categorias</h3>
+                <hr />
+                <ul class="nav flex-column">
+                    @foreach (var item in ViewBag.categorias)
+                    {
+                        <li class="category">
+                            <a asp-route-id="@item.Nome" asp-controller="Produtos" asp-action="ProdutosCategoria">@item.Nome</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        @* Fim do Overlay *@
 
         @* Menu de categorias *@
         <partial name="~/Views/Shared/Produtos/PartialMenu.cshtml" />
