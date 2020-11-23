@@ -4,10 +4,10 @@
     Layout = "Admin/_LayoutAdmin";
 }
 
-<h1>Index</h1>
+<h1>Lista de produtos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">+ cadastrar produto</a>
 </p>
 <table class="table">
     <thead>
@@ -62,9 +62,9 @@
                     <p>#########</p>
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IDProduto">Edit</a> |
-                    <a asp-action="AdmDetails" asp-route-id="@item.IDProduto">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IDProduto">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.IDProduto">Editar</a> |
+                    <a asp-action="AdmDetails" asp-route-id="@item.IDProduto">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDProduto">Excluir</a>
                 </td>
             </tr>
         }
