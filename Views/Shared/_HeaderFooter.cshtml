@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Office Street";
+}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/Layout/css/main.css" />
+    <link rel="stylesheet" href="~/FontAwesome/css/all.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg menu">
+            <a asp-action="Index" asp-controller="Home" class="navbar-brand">
+                <img src="~/img/logo.png" alt="logo" class="menu-logo" />
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        @Html.ActionLink("Ver Produtos", "Todos", "Produtos", null, null, null, null, new { @class = "nav-link menu-button" })
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.instagram.com/Officestreet/?hl=pt-br" class="nav-link menu-button">Galeria</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    @if (ViewBag.Logado == true)
+                    {
+                        @Html.ActionLink(" ", "LoggedIn", "Account", null, null, null, null, new { @class = "btn btn-outline-primary fas fa-user", ID = "btnLogin" });
+                    }
+                    else
+                    {
+                        @Html.ActionLink(" ", "Login", "Account", null, null, null, null, new { @class = "btn btn-outline-primary fas fa-user", ID = "btnLogin" });
+                    }
+                    @Html.ActionLink(" ", "Index", "Pedidos", null, null, null, null, new { @class = "btn btn-outline-success fas fa-shopping-basket", ID = "btnCesta" })
+                </form>
+            </div>
+        </nav>
+    </header>
+    <br />
+    <br /><br />
+    <main class="container-fluid" role="main">
+        @RenderBody()
+    </main>
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid text-center">
+            &copy; 2020 - Office Street
+        </div>
+        <div>
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+    @RenderSection("Styles", required: false)
+</body>
+</html>
