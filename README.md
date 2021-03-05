@@ -18,21 +18,18 @@ Website for a fictional store, where users can reserve a product for later buy i
 - Javascript
 
 ## Development
-Before starting, you should have MySql and the dotnet-ef tool to the development.
+#### Before starting, you should have MySql and the dotnet-ef tool to the development.
 
-[Install MySql](https://www.mysql.com), then create a database called "office", to change the name of the database, you also have to change it on appsettings.json,
-passing the respective data.
+- [Install MySql](https://www.mysql.com), then create a database called "office", to change the name of the database, you also have to change it on appsettings.json, passing the respective data.
 
-dotnet-ef tool: `$ dotnet tool install --global dotnet-ef`.
+- dotnet-ef tool: `$ dotnet tool install --global dotnet-ef`.
 
-Clone: `$ git clone https://github.com/ropoko/Office.git`.
+#### Starting
 
-On project: `$ dotnet restore` then `$ dotnet build`.
+- Clone: `$ git clone https://github.com/ropoko/Office.git`.
 
-Obs: some new folders should appear.
+- On project: `$ dotnet restore` then `$ dotnet build`, (some new folders should appear).
 
-Run migrations to create the tables: `$ dotnet-ef migrations add Initial` then `$ dotnet-ef database update`.
+- Run migrations to create the tables: `$ dotnet-ef migrations add Initial` then `$ dotnet-ef database update`, (check if the tables were created).
 
-Obs: check if the tables were created.
-
-Run the project: `$ dotnet run`.
+- Run the project: `$ dotnet run`.
