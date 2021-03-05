@@ -28,9 +28,11 @@ dotnet-ef tool: `$ dotnet tool install --global dotnet-ef`.
 Clone: `$ git clone https://github.com/ropoko/Office.git`.
 
 On project: `$ dotnet restore` then `$ dotnet build`.
+
 Obs: some new folders should appear.
 
 Run migrations to create the tables: `$ dotnet-ef migrations add Initial` then `$ dotnet-ef database update`.
+
 Obs: check if the tables were created.
 
 Run the project: `$ dotnet run`.
